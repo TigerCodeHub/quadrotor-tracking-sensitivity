@@ -1,0 +1,21 @@
+[cruise] input: analysis_cruise.csv
+
+[cruise] 69329/73728 rows present; COMPLETE blocks 2856/4096 (69.7%) -> N'=2856
+  factor              S1     S1c     ST     STc    ST-S1
+    mean_wind        +0.426  0.038  +0.610  0.046  +0.185
+    turbulence_rms   +0.316  0.037  +0.541  0.044  +0.225
+    seed_unit        +0.034  0.023  +0.210  0.026  +0.176  (seed: stochastic input, not a noise floor)
+    wind_direction_deg +0.018  0.020  +0.135  0.015  +0.117
+    thrust_to_weight +0.006  0.014  +0.083  0.016  +0.078
+    inertia_scale    +0.004  0.012  +0.071  0.019  +0.067
+    com_y_frac       -0.001  0.012  +0.063  0.012  +0.063
+    payload_fraction +0.003  0.010  +0.057  0.011  +0.054
+  top second-order pairs (S_ij +/- conf):
+    turbulence_rms x mean_wind: +0.088 +/- 0.075
+    turbulence_rms x seed_unit: +0.084 +/- 0.066
+    turbulence_rms x wind_direction_deg: +0.055 +/- 0.058
+    turbulence_rms x thrust_to_weight: +0.042 +/- 0.058
+    turbulence_rms x com_y_frac: +0.039 +/- 0.058
+    mean_wind x seed_unit: +0.033 +/- 0.060
+
+wrote complete-block indices to results/campaign_saltelli_final

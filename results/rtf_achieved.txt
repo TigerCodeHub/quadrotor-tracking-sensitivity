@@ -1,0 +1,25 @@
+== Saltelli (v5): n=22899 hosts=10
+   requested (takeoff,cruise): {('1.0', '6.0'): 19893, ('1.0', '3.0'): 1514, ('2.0', '10.0'): 1325}
+   sim_s median=698  wall_s median=171
+   whole-run RTF median=4.23 IQR=[3.59,4.51]
+   marginal RTF (1/slope of wall~sim) = 3.95  overhead(intercept)=16 s
+== sobol_debug: n=1 hosts=1
+   requested (takeoff,cruise): {('1.0', '6.0'): 1}
+   sim_s median=482  wall_s median=314
+   whole-run RTF median=1.54 IQR=[1.54,1.54]
+   marginal RTF (1/slope of wall~sim) = 1.54  overhead(intercept)=0 s
+== sobol_v4_diag: n=2 hosts=2
+   requested (takeoff,cruise): {('1.0', '6.0'): 2}
+   sim_s median=941  wall_s median=215
+   whole-run RTF median=4.38 IQR=[4.36,4.40]
+   marginal RTF (1/slope of wall~sim) = -5.94  overhead(intercept)=373 s
+== sobol_v4_vtest: n=2 hosts=1
+   requested (takeoff,cruise): {('1.0', '6.0'): 2}
+   sim_s median=2047  wall_s median=507
+   whole-run RTF median=4.17 IQR=[4.06,4.29]
+   marginal RTF (1/slope of wall~sim) = 3.76  overhead(intercept)=-37 s
+== v3-A (_at): n=10869 hosts=10
+   requested (takeoff,cruise): {('1.0', '6.0'): 10869}
+   sim_s median=329  wall_s median=173
+   whole-run RTF median=1.97 IQR=[1.87,2.22]
+   marginal RTF (1/slope of wall~sim) = 3.56  overhead(intercept)=73 s

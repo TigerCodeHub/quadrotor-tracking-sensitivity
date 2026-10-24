@@ -1,0 +1,6 @@
+* text=auto
+*.sh text eol=lf
+*.png binary
+# Hashed in DATA_CHECKSUMS.txt / read by `sha256sum -c`: keep LF on every platform
+DATA_CHECKSUMS.txt text eol=lf
+generated/** text eol=lf

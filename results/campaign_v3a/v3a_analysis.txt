@@ -1,0 +1,145 @@
+=== v3-A autotune analysis [v3a]  metric=cross_track_rmse  (HC3) ===
+designed _at configs      : 20000
+_at with valid cross_track_rmse: 18225  (91.1% of design; 1775 design rows have NO valid scored _at flight)
+  of those, no v2 control : 0
+paired _at<->v2 usable     : 18225
+
+[GAP] designed vs scored by airframe:
+    mrs_f330   designed=  4000 scored=  3909 unscored=    91 (2.3%)
+    mrs_f450   designed=  4000 scored=  3849 unscored=   151 (3.8%)
+    mrs_m690   designed=  4000 scored=  3883 unscored=   117 (2.9%)
+    mrs_t650   designed=  4000 scored=  3848 unscored=   152 (3.8%)
+    px4_x500   designed=  4000 scored=  2736 unscored=  1264 (31.6%)
+[GAP] scored fraction by execution_order decile:
+    decile 0: [2,8364)  n= 2000  scored= 90.8%
+    decile 1: [8364,16819)  n= 2000  scored= 91.2%
+    decile 2: [16819,24886)  n= 2000  scored= 90.2%
+    decile 3: [24886,32985)  n= 2000  scored= 90.8%
+    decile 4: [32985,41216)  n= 2000  scored= 90.6%
+    decile 5: [41216,49329)  n= 2000  scored= 90.7%
+    decile 6: [49329,57431)  n= 2000  scored= 90.9%
+    decile 7: [57431,65542)  n= 2000  scored= 91.8%
+    decile 8: [65542,73650)  n= 2000  scored= 91.8%
+    decile 9: [73650,81920)  n= 2000  scored= 92.3%
+[GAP] scored fraction by sample_index decile:
+    decile 0: [0,1600)  n= 2000  scored= 96.3%
+    decile 1: [1600,3200)  n= 1999  scored= 96.0%
+    decile 2: [3200,4800)  n= 1999  scored= 92.7%
+    decile 3: [4800,6401)  n= 2001  scored= 93.2%
+    decile 4: [6401,8001)  n= 2000  scored= 90.6%
+    decile 5: [8001,9601)  n= 1999  scored= 89.5%
+    decile 6: [9601,11202)  n= 2001  scored= 88.8%
+    decile 7: [11202,12802)  n= 2001  scored= 88.8%
+    decile 8: [12802,14402)  n= 2000  scored= 88.5%
+    decile 9: [14402,16012)  n= 2000  scored= 86.8%
+[GAP] scored fraction by wind_level: calm: 91.1% (n=20000)
+
+[0] n per airframe (paired, usable):
+    mrs_f330   CTU MRS F330       n=3909
+    mrs_f450   CTU MRS F450       n=3849
+    mrs_m690   CTU MRS M690       n=3883
+    mrs_t650   CTU MRS T650       n=3848
+    px4_x500   Official PX4 X500  n=2736
+    total n=18225
+
+[1] mean paired delta d = ln(autotune) - ln(fixed)  (const = mean d; neg = retuning IMPROVED)  (n=18225, R2=0.0000, HC3, rank=1/1, cond=1.0)
+   const                -0.0108  se=0.0015  t=-7.00
+    median d=-0.0040   frac improved (d<0)=0.556
+
+########################################################################
+# GLOBAL slopes (raw log mass, NO airframe FE): mixes within- and
+# between-airframe mass variation. Kept for comparison with earlier numbers.
+########################################################################
+
+[G2] GLOBAL paired delta  d ~ log_mass  (n=18225, R2=0.0006, HC3, rank=2/2, cond=4.2)
+   const                -0.0009  se=0.0032  t=-0.29
+   log_mass             -0.0100  se=0.0030  t=-3.36
+
+[G3] GLOBAL paired delta  d ~ log_mass + covariates  (n=18225, R2=0.0175, HC3, rank=7/7, cond=27.6)
+   const                -0.0028  se=0.0153  t=-0.18
+   log_mass             -0.0053  se=0.0032  t=-1.66
+   turb                 +0.0268  se=0.0022  t=+12.41
+   wind                 +0.0003  se=0.0010  t=+0.32
+   t_to_w               -0.0221  se=0.0037  t=-5.89
+   inertia              -0.0040  se=0.0111  t=-0.36
+   abs_com_y            +0.3448  se=0.1938  t=+1.78
+
+[G4a] GLOBAL fixed:    ln(metric_v2) ~ log_mass + covars  (n=18225, R2=0.7957, HC3, rank=7/7, cond=27.6)
+   const                -1.5969  se=0.0376  t=-42.43
+   log_mass             -0.2648  se=0.0089  t=-29.72
+   turb                 +1.0649  se=0.0044  t=+244.60
+   wind                 +0.1831  se=0.0026  t=+71.58
+   t_to_w               -0.0057  se=0.0093  t=-0.61
+   inertia              +0.0452  se=0.0283  t=+1.60
+   abs_com_y            -0.0559  se=0.5041  t=-0.11
+
+[G4b] GLOBAL autotune: ln(metric_at) ~ log_mass + covars  (n=18225, R2=0.8085, HC3, rank=7/7, cond=27.6)
+   const                -1.5997  se=0.0371  t=-43.12
+   log_mass             -0.2701  se=0.0088  t=-30.82
+   turb                 +1.0917  se=0.0042  t=+257.81
+   wind                 +0.1834  se=0.0025  t=+72.54
+   t_to_w               -0.0278  se=0.0092  t=-3.03
+   inertia              +0.0412  se=0.0277  t=+1.49
+   abs_com_y            +0.2888  se=0.4960  t=+0.58
+
+    GLOBAL fixed log_mass slope    = -0.2648 (HC3 t=-29.72)
+    GLOBAL autotune log_mass slope = -0.2701 (HC3 t=-30.82)
+    GLOBAL change (autotune-fixed) = -0.0053
+
+########################################################################
+# AIRFRAME-FE: log1p(payload fraction), |com_y|/wheelbase + airframe FE
+# (the paper's within-airframe estimand)
+########################################################################
+
+[F2] FE: paired delta  d ~ log_payload + covariates + airframe FE  (n=18225, R2=0.0192, HC3, rank=11/11, cond=29.7)
+   const                -0.0160  se=0.0156  t=-1.02
+   log_payload          +0.0207  se=0.0216  t=+0.96
+   turb                 +0.0284  se=0.0023  t=+12.47
+   wind                 +0.0004  se=0.0010  t=+0.36
+   t_to_w               -0.0223  se=0.0038  t=-5.94
+   inertia              -0.0016  se=0.0111  t=-0.14
+   abs_com_y_frac       +0.2214  se=0.1024  t=+2.16
+
+[F4a] FE fixed:    ln(metric_v2) ~ log_payload + covars + AF FE  (n=18225, R2=0.7999, HC3, rank=11/11, cond=29.7)
+   const                -1.5857  se=0.0388  t=-40.85
+   log_payload          -0.0393  se=0.0554  t=-0.71
+   turb                 +1.0585  se=0.0045  t=+234.05
+   wind                 +0.1831  se=0.0025  t=+72.17
+   t_to_w               -0.0055  se=0.0092  t=-0.60
+   inertia              +0.0418  se=0.0280  t=+1.49
+   abs_com_y_frac       +0.1528  se=0.2804  t=+0.54
+
+[F4b] FE autotune: ln(metric_at) ~ log_payload + covars + AF FE  (n=18225, R2=0.8128, HC3, rank=11/11, cond=29.7)
+   const                -1.6018  se=0.0383  t=-41.83
+   log_payload          -0.0186  se=0.0546  t=-0.34
+   turb                 +1.0869  se=0.0044  t=+247.55
+   wind                 +0.1835  se=0.0025  t=+73.31
+   t_to_w               -0.0278  se=0.0091  t=-3.07
+   inertia              +0.0402  se=0.0275  t=+1.47
+   abs_com_y_frac       +0.3741  se=0.2753  t=+1.36
+
+    FE fixed log_payload slope    = -0.0393 (se 0.0554, t=-0.71)
+    FE autotune log_payload slope = -0.0186 (se 0.0546, t=-0.34)
+    FE autotune-fixed (= paired-delta slope, HC3) = +0.0207 (se 0.0216, t=+0.96)
+
+########################################################################
+# AIRFRAME x PAYLOAD interaction (payload slope may differ by airframe)
+########################################################################
+[I] delta d: joint HC3 Wald, airframe x payload interactions: chi2=3.08 df=4 p=0.545  (R2=0.0193)
+[I] fixed ln(metric_v2): joint HC3 Wald, airframe x payload interactions: chi2=14.85 df=4 p=0.00502  (R2=0.8001)
+[I] autotune ln(metric_at): joint HC3 Wald, airframe x payload interactions: chi2=18.11 df=4 p=0.00117  (R2=0.8129)
+
+[I2] PER-AIRFRAME payload slope (separate fit per airframe: y ~ log_payload + covars, HC3)
+    airframe       n     fixed      (t)   autotune      (t)   at-fixed      se       t
+    mrs_f330    3909   -0.3363    -1.68    -0.3872    -1.96    -0.0508  0.0492   -1.03
+    mrs_f450    3849   -0.1414    -1.53    -0.1318    -1.47    +0.0095  0.0344   +0.28
+    mrs_m690    3883   -0.0323    -0.32    -0.0006    -0.01    +0.0318  0.0447   +0.71
+    mrs_t650    3848   +0.5632    +3.60    +0.6292    +4.07    +0.0660  0.0614   +1.08
+    px4_x500    2736   -0.0856    -0.65    -0.0487    -0.37    +0.0369  0.0632   +0.58
+
+[5] mean paired delta by airframe
+    CTU MRS F330       n= 3909  mean_d=+0.0011  se=0.0025  median=-0.0023
+    CTU MRS F450       n= 3849  mean_d=-0.0183  se=0.0035  median=-0.0062
+    CTU MRS M690       n= 3883  mean_d=-0.0187  se=0.0035  median=-0.0054
+    CTU MRS T650       n= 3848  mean_d=-0.0127  se=0.0034  median=-0.0031
+    Official PX4 X500  n= 2736  mean_d=-0.0033  se=0.0046  median=-0.0043

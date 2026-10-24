@@ -1,0 +1,61 @@
+[
+  {
+    "segment": "cruise",
+    "metric": "cross_track_rmse",
+    "N_complete_blocks": 2856,
+    "N_total_blocks": 4096,
+    "S1": {
+      "payload_fraction": 0.0027600412469974095,
+      "turbulence_rms": 0.31555064986577996,
+      "mean_wind": 0.4255053293782996,
+      "thrust_to_weight": 0.005627874311392487,
+      "inertia_scale": 0.0043138658790395105,
+      "com_y_frac": -0.0005203892645505706,
+      "wind_direction_deg": 0.01843380549776054,
+      "seed_unit": 0.03419411953690744
+    },
+    "ST": {
+      "payload_fraction": 0.05651898998195814,
+      "turbulence_rms": 0.5405642035884171,
+      "mean_wind": 0.6103080203488664,
+      "thrust_to_weight": 0.08345130240357304,
+      "inertia_scale": 0.07110118424545055,
+      "com_y_frac": 0.06283078461620026,
+      "wind_direction_deg": 0.13536772019545995,
+      "seed_unit": 0.209941147273774
+    },
+    "seed_ST": 0.209941147273774,
+    "top_pairs": [
+      [
+        "turbulence_rms",
+        "mean_wind",
+        0.0877
+      ],
+      [
+        "turbulence_rms",
+        "seed_unit",
+        0.0837
+      ],
+      [
+        "turbulence_rms",
+        "wind_direction_deg",
+        0.0546
+      ],
+      [
+        "turbulence_rms",
+        "thrust_to_weight",
+        0.0422
+      ],
+      [
+        "turbulence_rms",
+        "com_y_frac",
+        0.0385
+      ],
+      [
+        "mean_wind",
+        "seed_unit",
+        0.0333
+      ]
+    ]
+  }
+]

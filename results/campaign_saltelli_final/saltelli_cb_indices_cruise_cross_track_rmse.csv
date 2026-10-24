@@ -1,0 +1,9 @@
+factor,S1,S1_conf,ST,ST_conf,metric,n_blocks
+payload_fraction,0.002760,0.010022,0.056519,0.011484,cross_track_rmse,2856
+turbulence_rms,0.315551,0.037479,0.540564,0.044306,cross_track_rmse,2856
+mean_wind,0.425505,0.037516,0.610308,0.046427,cross_track_rmse,2856
+thrust_to_weight,0.005628,0.014314,0.083451,0.015921,cross_track_rmse,2856
+inertia_scale,0.004314,0.011822,0.071101,0.018986,cross_track_rmse,2856
+com_y_frac,-0.000520,0.012050,0.062831,0.011867,cross_track_rmse,2856
+wind_direction_deg,0.018434,0.019901,0.135368,0.015362,cross_track_rmse,2856
+seed_unit,0.034194,0.023228,0.209941,0.025666,cross_track_rmse,2856

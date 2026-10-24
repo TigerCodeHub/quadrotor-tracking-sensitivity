@@ -1,0 +1,38 @@
+|IQR effect| (log units); HC3 95% CI = value +- 1.96*|iqr/t|; * = CI includes 0 (down-triangle; lower whisker drawn to axis floor)
+  v2    turbulence_rms     |IQR|=1.5803  CI=[1.5737, 1.5869]
+  v2    mean_wind          |IQR|=0.4993  CI=[0.4926, 0.5061]
+  v2    thrust_to_weight   |IQR|=0.0084  CI=[0.0022, 0.0145]
+  v2    log_payload        |IQR|=0.0140  CI=[0.0078, 0.0201]
+  v2    abs_com_y_frac     |IQR|=0.0062  CI=[0.0000, 0.0124]
+  v2    inertia_scale      |IQR|=0.0016  CI=[0.0000, 0.0078]  *
+  v3-D  turbulence_rms     |IQR|=1.5730  CI=[1.5484, 1.5975]
+  v3-D  mean_wind          |IQR|=0.7625  CI=[0.7380, 0.7870]
+  v3-D  thrust_to_weight   |IQR|=0.0688  CI=[0.0467, 0.0909]
+  v3-D  log_payload        |IQR|=0.0085  CI=[0.0000, 0.0315]  *
+  v3-D  abs_com_y_frac     |IQR|=0.0245  CI=[0.0032, 0.0459]
+  v3-D  inertia_scale      |IQR|=0.0087  CI=[0.0000, 0.0301]  *
+  v4    turbulence_rms     |IQR|=1.2884  CI=[1.2785, 1.2983]
+  v4    mean_wind          |IQR|=1.2833  CI=[1.2739, 1.2927]
+  v4    thrust_to_weight   |IQR|=0.0889  CI=[0.0799, 0.0980]
+  v4    log_payload        |IQR|=0.0107  CI=[0.0020, 0.0195]
+  v4    abs_com_y_frac     |IQR|=0.0292  CI=[0.0204, 0.0379]
+  v4    inertia_scale      |IQR|=0.0005  CI=[0.0000, 0.0093]  *
+airframe-FE coefficient beta (log 3-D SPE per unit) with HC3 95% CI = beta +- 1.96*|beta/t| (not plotted)
+  turbulence_rms     v2    beta=+1.0538  95% CI=[+1.0494, +1.0582]
+  turbulence_rms     v3-D  beta=+0.8933  95% CI=[+0.8794, +0.9073]
+  turbulence_rms     v4    beta=+0.8641  95% CI=[+0.8574, +0.8707]
+  mean_wind          v2    beta=+0.1665  95% CI=[+0.1642, +0.1687]
+  mean_wind          v3-D  beta=+0.2553  95% CI=[+0.2470, +0.2635]
+  mean_wind          v4    beta=+0.4295  95% CI=[+0.4264, +0.4327]
+  thrust_to_weight   v2    beta=-0.0112  95% CI=[-0.0194, -0.0030]
+  thrust_to_weight   v3-D  beta=-0.0918  95% CI=[-0.1213, -0.0624]
+  thrust_to_weight   v4    beta=-0.1189  95% CI=[-0.1310, -0.1068]
+  log_payload        v2    beta=-0.1071  95% CI=[-0.1542, -0.0601]
+  log_payload        v3-D  beta=+0.0611  95% CI=[-0.1052, +0.2274]
+  log_payload        v4    beta=-0.0822  95% CI=[-0.1489, -0.0154]
+  abs_com_y_frac     v2    beta=+0.2480  95% CI=[+0.0014, +0.4946]
+  abs_com_y_frac     v3-D  beta=+0.9830  95% CI=[+0.1270, +1.8389]
+  abs_com_y_frac     v4    beta=+1.1668  95% CI=[+0.8153, +1.5183]
+  inertia_scale      v2    beta=-0.0066  95% CI=[-0.0312, +0.0181]
+  inertia_scale      v3-D  beta=-0.0348  95% CI=[-0.1205, +0.0509]
+  inertia_scale      v4    beta=-0.0021  95% CI=[-0.0371, +0.0328]

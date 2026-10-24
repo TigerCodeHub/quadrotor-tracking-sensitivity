@@ -1,0 +1,4 @@
+v2: n=81894  retried flights=39053 (47.69%)  RETRIED coef=+0.0109  HC3 se=0.0036  t=+2.99
+v3a: n=18225  retried flights=7858 (43.12%)  RETRIED coef=-0.0035  HC3 se=0.0082  t=-0.43
+v3d: n=19890  retried flights=3084 (15.51%)  RETRIED coef=+0.0297  HC3 se=0.0190  t=+1.56
+v4: n=80446  retried flights=18203 (22.63%)  RETRIED coef=+0.0363  HC3 se=0.0063  t=+5.74

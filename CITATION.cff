@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "Quadrotor path-tracking sensitivity: PX4 SITL study (code and summary results)"
+type: software
+authors:
+  - family-names: Deng
+    given-names: Tiger
+    orcid: "https://orcid.org/0009-0008-0549-590X"
+    affiliation: "Thomas Jefferson High School for Science and Technology"
+license: MIT
+keywords:
+  - quadrotor
+  - path tracking
+  - PX4
+  - software-in-the-loop
+  - global sensitivity analysis
+  - Dryden turbulence
+preferred-citation:
+  type: article
+  title: "Quadrotor Path-Tracking Sensitivity from Straight Paths to Synthetic Delivery Routes: A Large-Scale PX4 Software-in-the-Loop Study"
+  authors:
+    - family-names: Deng
+      given-names: Tiger
+      orcid: "https://orcid.org/0009-0008-0549-590X"
+  year: 2026

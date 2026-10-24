@@ -1,0 +1,8 @@
+GLOBAL (no FE, raw log mass) v2: n=81894 R2=0.775
+  intercept           -1.4315  (t=-83.5)
+  turbulence          +1.0538  (t=+465.5)
+  mean_wind           +0.1665  (t=+144.9)
+  log_mass            -0.2630  (t=-68.8)
+  thrust_to_weight    -0.0112  (t=-2.7)
+  inertia_scale       -0.0066  (t=-0.5)
+  abs_com_y_frac      +0.2478  (t=+2.0)

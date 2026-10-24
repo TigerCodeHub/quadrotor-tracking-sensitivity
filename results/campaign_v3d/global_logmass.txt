@@ -1,0 +1,8 @@
+GLOBAL (no FE, raw log mass) v3d: n=19890 R2=0.546
+  intercept           -2.2594  (t=-38.0)
+  turbulence          +0.9026  (t=+134.8)
+  mean_wind           +0.2553  (t=+60.9)
+  log_mass            -0.1444  (t=-10.9)
+  thrust_to_weight    -0.0919  (t=-6.1)
+  inertia_scale       -0.0347  (t=-0.8)
+  abs_com_y_frac      +0.9826  (t=+2.2)

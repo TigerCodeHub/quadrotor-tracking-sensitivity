@@ -1,0 +1,34 @@
+name: CI
+
+# Fast checks on every push: dependencies install, the package and every script compile, the tests
+# pass, and the committed design inputs match DATA_CHECKSUMS.txt. The full reproduction against the
+# Zenodo data lives in reproduce.yml.
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Compile package and scripts
+        run: python -m compileall -q tdresearch scripts tests
+      - name: Import package
+        run: python -c "import tdresearch.campaign, tdresearch.generate, tdresearch.metrics, tdresearch.stats"
+      - name: Check shell scripts
+        run: bash -n scripts/reproduce_paper.sh scripts/analysis/run_dryden_plugin_test.sh
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Checksums of committed design inputs
+        # DATA_CHECKSUMS.txt also lists the Zenodo tables; only the files present in git are checked here.
+        run: |
+          awk '!/^#/ && system("test -f " $2) == 0' DATA_CHECKSUMS.txt > committed_sums.txt
+          test -s committed_sums.txt
+          sha256sum -c committed_sums.txt

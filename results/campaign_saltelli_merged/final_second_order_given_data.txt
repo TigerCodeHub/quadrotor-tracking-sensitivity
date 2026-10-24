@@ -1,0 +1,45 @@
+valid runs 69329 of 73728; blocks 4096; bins per factor 10
+N valid = 69329
+
+10-bin bias-corrected S1 (95% normal CI from SD of 1000 block resamples):
+   turbulence      +0.2957   [+0.2828,+0.3085]
+   mean wind       +0.3925   [+0.3812,+0.4037]
+   gust seed       +0.0001   [-0.0007,+0.0008]
+   T/W             +0.0048   [+0.0020,+0.0076]
+   CoM             +0.0001   [-0.0007,+0.0009]
+   payload         -0.0001   [-0.0007,+0.0006]
+   wind direction  +0.0096   [+0.0064,+0.0129]
+   inertia         +0.0000   [-0.0007,+0.0008]
+
+S2_ij = C_ij - S1_i - S1_j, 10x10 bins
+pair                               C_ij    S2_ij              95% CI
+turbulence x mean wind           0.7375  +0.0494   [+0.0359,+0.0629]
+turbulence x gust seed           0.2968  +0.0011   [-0.0007,+0.0029]
+turbulence x T/W                 0.3039  +0.0035   [+0.0007,+0.0062]
+turbulence x CoM                 0.2967  +0.0009   [-0.0008,+0.0026]
+turbulence x payload             0.2965  +0.0009   [-0.0007,+0.0026]
+turbulence x wind direction      0.3178  +0.0125   [+0.0088,+0.0163]
+turbulence x inertia             0.2964  +0.0007   [-0.0010,+0.0024]
+mean wind x gust seed            0.3941  +0.0016   [-0.0002,+0.0033]
+mean wind x T/W                  0.3994  +0.0021   [-0.0001,+0.0043]
+mean wind x CoM                  0.3935  +0.0009   [-0.0007,+0.0025]
+mean wind x payload              0.3928  +0.0004   [-0.0010,+0.0019]
+mean wind x wind direction       0.4136  +0.0115   [+0.0077,+0.0154]
+mean wind x inertia              0.3933  +0.0008   [-0.0006,+0.0022]
+gust seed x T/W                  0.0061  +0.0013   [-0.0008,+0.0033]
+gust seed x CoM                  0.0008  +0.0006   [-0.0014,+0.0026]
+gust seed x payload              0.0035  +0.0035   [+0.0010,+0.0060]
+gust seed x wind direction       0.0110  +0.0013   [-0.0008,+0.0035]
+gust seed x inertia              0.0011  +0.0010   [-0.0011,+0.0031]
+T/W x CoM                        0.0071  +0.0022   [-0.0003,+0.0046]
+T/W x payload                    0.0086  +0.0038   [+0.0013,+0.0064]
+T/W x wind direction             0.0263  +0.0119   [+0.0082,+0.0156]
+T/W x inertia                    0.0060  +0.0012   [-0.0007,+0.0030]
+CoM x payload                    0.0009  +0.0008   [-0.0011,+0.0027]
+CoM x wind direction             0.0107  +0.0010   [-0.0008,+0.0027]
+CoM x inertia                    0.0060  +0.0058   [+0.0030,+0.0087]
+payload x wind direction         0.0108  +0.0012   [-0.0009,+0.0033]
+payload x inertia                0.0003  +0.0003   [-0.0015,+0.0022]
+wind direction x inertia         0.0104  +0.0007   [-0.0011,+0.0025]
+
+sum S1 = 0.7027;  sum S2 (28 pairs) = +0.1230;  sum S1 + sum S2 = 0.8257  95% CI [0.8077,0.8438]

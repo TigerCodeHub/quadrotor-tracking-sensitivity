@@ -1,0 +1,35 @@
+design runs 73728; valid primary-metric runs used 69329 (94.0%)
+structure check (first 200 blocks): AB_i == A with column i from B in 1600/1600 cases
+
+(2) GIVEN-DATA S1: equal-count binning K=50 on all 69329 valid runs; Var(Y) = population variance of valid log-metric = 1.43894
+   payload_fraction     S1=0.0006  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0036) [-0.0009, 0.0023]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0036) [-0.0017, 0.0016]; run-bootstrap CI [0.0001, 0.0011]   (K=20: 0.0002, K=100: 0.0014; bias-corrected K=50: -0.0001)
+   turbulence_rms       S1=0.2999  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0025) [0.2868, 0.3121]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0025) [0.2863, 0.3116]; run-bootstrap CI [0.2941, 0.3057]   (K=20: 0.2985, K=100: 0.3008; bias-corrected K=50: +0.2994)
+   mean_wind            S1=0.3976  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0018) [0.3863, 0.4093]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0018) [0.3859, 0.4089]; run-bootstrap CI [0.3923, 0.4027]   (K=20: 0.3961, K=100: 0.3985; bias-corrected K=50: +0.3972)
+   thrust_to_weight     S1=0.0067  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0033) [0.0036, 0.0100]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0033) [0.0029, 0.0093]; run-bootstrap CI [0.0052, 0.0080]   (K=20: 0.0054, K=100: 0.0079; bias-corrected K=50: +0.0060)
+   inertia_scale        S1=0.0013  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0033) [-0.0003, 0.0032]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0033) [-0.0011, 0.0024]; run-bootstrap CI [0.0006, 0.0018]   (K=20: 0.0003, K=100: 0.0025; bias-corrected K=50: +0.0006)
+   com_y_frac           S1=0.0009  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0034) [-0.0006, 0.0027]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0034) [-0.0013, 0.0020]; run-bootstrap CI [0.0004, 0.0014]   (K=20: 0.0004, K=100: 0.0026; bias-corrected K=50: +0.0002)
+   wind_direction_deg   S1=0.0116  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0036) [0.0081, 0.0153]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0036) [0.0074, 0.0146]; run-bootstrap CI [0.0100, 0.0132]   (K=20: 0.0111, K=100: 0.0132; bias-corrected K=50: +0.0109)
+   seed_unit            S1=0.0016  95% CI (block bootstrap, plug-in, bias-adjusted by -0.0032) [-0.0001, 0.0038]; bias-corrected S1 block-bootstrap CI (adjusted by -0.0032) [-0.0008, 0.0031]; run-bootstrap CI [0.0006, 0.0020]   (K=20: 0.0003, K=100: 0.0038; bias-corrected K=50: +0.0009)
+
+(3) PAIRWISE-COMPLETE Jansen S_Ti over 4096 base blocks; valid A rows 3870, valid B rows 3867
+    Var(Y) = sample variance (ddof=1) of the 7737 valid A and B rows pooled = 1.42863
+    factor               S_Ti pairwise    95% CI (block bootstrap)  n pairs
+    payload_fraction            0.0608   [0.0513, 0.0721]        3743
+    turbulence_rms              0.5191   [0.4846, 0.5548]        3755
+    mean_wind                   0.6101   [0.5745, 0.6522]        3728
+    thrust_to_weight            0.0907   [0.0767, 0.1070]        3776
+    inertia_scale               0.0689   [0.0554, 0.0846]        3776
+    com_y_frac                  0.0669   [0.0573, 0.0785]        3756
+    wind_direction_deg          0.1284   [0.1151, 0.1431]        3708
+    seed_unit                   0.2020   [0.1827, 0.2240]        3760
+
+FINAL TABLE: factor | S1 given-data (CI) | S_Ti pairwise (CI) | n pairs || reference complete-block (SALib, complete blocks only): S1 +-conf, ST +-conf
+payload_fraction     | 0.001 [-0.001,0.002] | 0.061 [0.051,0.072] | 3743 || S1 +0.003+-0.010, ST 0.057+-0.011
+turbulence_rms       | 0.300 [0.287,0.312] | 0.519 [0.485,0.555] | 3755 || S1 +0.316+-0.037, ST 0.541+-0.044
+mean_wind            | 0.398 [0.386,0.409] | 0.610 [0.575,0.652] | 3728 || S1 +0.426+-0.038, ST 0.610+-0.046
+thrust_to_weight     | 0.007 [0.004,0.010] | 0.091 [0.077,0.107] | 3776 || S1 +0.006+-0.014, ST 0.083+-0.016
+inertia_scale        | 0.001 [-0.000,0.003] | 0.069 [0.055,0.085] | 3776 || S1 +0.004+-0.012, ST 0.071+-0.019
+com_y_frac           | 0.001 [-0.001,0.003] | 0.067 [0.057,0.078] | 3756 || S1 -0.001+-0.012, ST 0.063+-0.012
+wind_direction_deg   | 0.012 [0.008,0.015] | 0.128 [0.115,0.143] | 3708 || S1 +0.018+-0.020, ST 0.135+-0.015
+seed_unit            | 0.002 [-0.000,0.004] | 0.202 [0.183,0.224] | 3760 || S1 +0.034+-0.023, ST 0.210+-0.026
+wrote results/campaign_saltelli_merged/saltelli_v5_given_data_indices_final.csv

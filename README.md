@@ -1,0 +1,129 @@
+# Quadrotor path-tracking sensitivity: PX4 SITL study
+
+[![CI](https://github.com/TigerCodeHub/quadrotor-tracking-sensitivity/actions/workflows/ci.yml/badge.svg)](https://github.com/TigerCodeHub/quadrotor-tracking-sensitivity/actions/workflows/ci.yml)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23749893.svg)](https://doi.org/10.5281/zenodo.23749893)
+
+Code, models, and summary results for
+
+> T. Deng, *Quadrotor Path-Tracking Sensitivity from Straight Paths to Synthetic Delivery Routes:
+> A Large-Scale PX4 Software-in-the-Loop Study* (manuscript).
+
+About 300,000 simulated flights across five quadrotor airframes (1.35–4.65 kg) in PX4 v1.16.2
+SITL with Gazebo Harmonic measure how path-tracking error responds to turbulence, mean wind, wind
+direction, payload, thrust-to-weight, inertia, and center-of-mass offset, first on benchmark paths
+and then on synthetic delivery-route archetypes, with a Saltelli variance decomposition on top.
+Turbulence intensity and mean wind speed dominate; the vehicle parameters have small effects.
+
+The per-flight data tables are on Zenodo (DOI: [10.5281/zenodo.23749893](https://doi.org/10.5281/zenodo.23749893)); see [`DATA_MANIFEST.md`](DATA_MANIFEST.md).
+
+## Repository layout
+| path | contents |
+|---|---|
+| `tdresearch/` | Python package: asset generation (`generate.py`), the PX4/Gazebo flight runner (`sim.py`), ULog → tracking metrics (`metrics.py`), fits (`stats.py`), CLI (`python -m tdresearch`) |
+| `gz_plugins/dryden_wind/` | Gazebo Harmonic system plugin for the Dryden-form gust model |
+| `generated/` | airframe catalog with pinned upstream commits; Saltelli problem definition |
+| `scripts/v2`, `v3`, `v4`, `saltelli` | per-experiment design generators and analyses |
+| `scripts/analysis/` | canonical analysis set, regression fits, paper tables and figures, Dryden validation |
+| `scripts/extensions/` | leave-one-airframe-out, dimensionless exponents, metric robustness |
+| `scripts/autotune/` | PX4 autotune probe used to produce the v3-A tuned gains |
+| `results/` | small summary outputs the paper's numbers are read from |
+| `figures/` | paper figures, created locally by `scripts/analysis/make_paper_figures.py` (not tracked: the published figures belong to the AIAA article) |
+| `tests/` | design-generation and airframe-model tests |
+
+## Experiments
+| exp | question | design | analysis |
+|---|---|---|---|
+| v2 | baseline sensitivities on a straight 1 km path, white-noise gusts (Sobol 2¹⁴ per airframe) | `scripts/v2/make_v2_design.py` | `scripts/analysis/refit_robust.py`, `scripts/v2/wind_direction_analysis.py`, `scripts/extensions/*` |
+| v3-A | does per-configuration PX4 autotune remove the mass effect? | `scripts/v3/make_v3a_design.py`, `scripts/autotune/autotune_probe.py` | `scripts/v3/v3a_analysis.py` |
+| v3-B | is the wind effect course-relative; do turns and climbs add error? | `scripts/v3/make_v3_design.py` | `scripts/v3/v3b_analysis.py`, `scripts/analysis/paper_tables_extra.py` |
+| v3-C | does curvature raise error at fixed path length? | `scripts/v3/make_arc_plans.py`, `make_curvature_design.py` | `scripts/v3/curviness_analysis.py` |
+| v3-D | Dryden-form vs white-noise gusts | `scripts/v3/make_v3d_design.py` | `scripts/v3/v3d_analysis.py`, `scripts/analysis/v3d_pair_check.py` |
+| v4 | do the sensitivities transfer to delivery routes? | `scripts/v4/make_delivery_plans.py`, `make_v4_design.py` | `scripts/analysis/refit_robust.py`, `scripts/v4/v4_paired_analysis.py`, `route_wind_interaction.py` |
+| v5 | Saltelli first-order, total-effect and pairwise indices (x500, urban route) | `scripts/saltelli/make_saltelli_design.py` | `scripts/saltelli/saltelli_crosscheck_given_data.py`, `saltelli_second_order_given_data.py`, `saltelli_completeblock.py` |
+
+## Reproducing the paper (no simulator needed)
+```bash
+pip install -r requirements.txt          # Python 3.12
+curl -L -o data.tar.gz "https://zenodo.org/records/23749893/files/quadrotor-tracking-sensitivity-data.tar.gz?download=1"
+tar -xzf data.tar.gz --exclude=DATA_MANIFEST.md --exclude=DATA_CHECKSUMS.txt && sha256sum -c DATA_CHECKSUMS.txt
+bash scripts/reproduce_paper.sh          # ~15 min; logs in reproduce_out/
+python scripts/check_reproduction.py     # compares the regenerated outputs with the committed ones
+```
+`reproduce_paper.sh` rebuilds the canonical analysis sets and re-runs every analysis the paper
+reports, writing over the committed outputs in `results/` and drawing the paper figures into
+`figures/`. `check_reproduction.py` then fails on any output that differs beyond timestamps and
+last-digit float noise. The same sequence runs on GitHub Actions: `ci.yml` (tests and checks, on
+every push) and `reproduce.yml` (the full reproduction from the Zenodo deposit; start it from the
+Actions tab). Each script's docstring gives its inputs, outputs and options.
+The primary metric is the column `cross_track_rmse` (the paper's 3-D setpoint-path RMSE).
+
+| paper | regenerated by | output |
+|---|---|---|
+| Table 2 (N per experiment) | `analysis/make_analysis_set.py` | `analysis_manifest.json` |
+| Table 3, Fig. 1, v4 fit | `analysis/refit_robust.py`, `analysis/make_paper_figures.py` | `results/campaign_*/refit_ct_cruise.*`, `figures/` |
+| v2 wind direction, LOAO, exponents; v3-B (Table 10), v3-C (Table 12), v3-D; metric robustness (Table 6) | `analysis/primary_footing.py` | `results/primary_footing.txt` |
+| v3-C per-airframe slopes (Table 12) | `v3/curviness_analysis.py` | `results/campaign_v3_full/v3c_curvature.txt` |
+| LOAO by descriptor (Table 8) | `analysis/loao_descriptor_comparison{,_v4}.py` | `results/campaign_v{2,4}/loao_descriptor_comparison.txt` |
+| v3-A attrition (Sec. III.B) | `analysis/v3a_attrition.py` | `results/campaign_v3a/v3a_attrition.txt`; causes in `attrition_causes.txt` (from undeposited host files) |
+| v3-A (Table 9) | `v3/v3a_analysis.py` | `results/campaign_v3a/v3a_analysis.txt` |
+| v3-B maneuvers (Table 11) | `analysis/paper_tables_extra.py` | `results/paper_tables_extra.txt` |
+| Transfer table (Table 13) | `analysis/global_logmass.py` | `results/campaign_*/global_logmass.txt` |
+| Robustness: v3-A without X500; v2/v4 without retried flights | `analysis/robustness_subsets.py` + `v3/v3a_analysis.py`, `analysis/refit_robust.py` | `results/campaign_v3a/v3a_analysis_no_x500.txt`, `results/campaign_v{2,4}/refit_ct_cruise_noretry.txt` |
+| v4 paired route contrasts | `v4/v4_paired_analysis.py` | `results/campaign_v4/v4_paired_analysis_primary.txt` |
+| v5 indices (Fig. 2, Tables 14–15) | `saltelli/saltelli_crosscheck_given_data.py`, `saltelli_completeblock.py`, `saltelli_second_order_given_data.py` | `results/campaign_saltelli_{merged,final}/` |
+| Dryden validation (Table 7) | `analysis/validate_dryden{,_extended}.py` | `results/dryden_validation/` |
+
+**Verified 2026-10-24** in a clean Python 3.12 environment built from `requirements.txt` on Linux,
+from a fresh checkout of this repository plus the deposit (all `DATA_CHECKSUMS.txt` hashes OK):
+`reproduce_paper.sh` runs without error and `git diff` afterwards is empty apart from the
+`generated_at` timestamps in the refit JSONs, i.e. the canonical analysis sets and every committed
+result file regenerate exactly; the five figures also matched the author's renders byte for byte. An independent run on Windows reproduced the
+same numbers; there the refit JSONs differ in the last float digits and the PNGs in compression
+bytes (numerically and visually identical). The flown designs and mission plans regenerate from
+the generators (v1, v2, v3-B, v3-D, v4 and Saltelli byte-identically; v3-A and v3-C
+cell-for-cell). Known limits:
+- `validate_dryden.py` at its default 4×10⁶ steps flags the vertical-axis integral time scale
+  (ratio 1.14); the committed result and the paper use 3×10⁶ steps. The extended validation
+  (`validate_dryden_extended.py`, the source of Table 7's Python row) reproduces exactly.
+- The compiled-plugin row of Table 7 needs gz-sim and the built plugin
+  (`analysis/run_dryden_plugin_test.sh`, `validate_dryden_plugin.py`).
+- `results/rtf_achieved.txt` (real-time factors quoted in the Methods) and the v3-A attrition causes
+  (`results/campaign_v3a/attrition_causes.txt`) were computed from per-run status files that are not deposited, and the compiled-plugin Dryden results
+  (`results/dryden_validation/validate_dryden_plugin.*`) need gz-sim; neither is regenerated by
+  `reproduce_paper.sh`.
+
+### Regenerating the designs
+```bash
+python -m tdresearch generate-sobol-design --output v1.csv          # = generated/designs/multi_airframe_sobol.csv
+python -m tdresearch generate-sobol-design --samples-per-airframe 16384 --repetitions 1 --output v2.csv
+python scripts/v2/make_v2_design.py v2.csv                         # = generated/designs/sobol_v2_2e14.csv
+python scripts/v3/make_v3_design.py 10000 out/                     # v3-B: v3_b1.csv, v3_b2.csv
+python scripts/v3/make_v3a_design.py 20000 out/v3_a.csv
+python scripts/v3/make_arc_plans.py out/plans && python scripts/v3/make_curvature_design.py 20000 out/v3_c.csv
+python scripts/v3/make_v3d_design.py 20000 out/
+python scripts/v4/make_delivery_plans.py out/plans && python scripts/v4/make_v4_design.py out/
+python scripts/saltelli/make_saltelli_design.py out/saltelli
+```
+The v3–v4 generators select eligible v2 configurations from `results/campaign_v2/combined_cruise.csv`,
+so they need the deposit too.
+
+## Re-flying (optional)
+Requires PX4-Autopilot v1.16.2 and Gazebo Harmonic gz-sim 8.14 (see [`ENVIRONMENT.md`](ENVIRONMENT.md)).
+1. Build the gust plugin: `cmake -S gz_plugins/dryden_wind -B gz_plugins/dryden_wind/build && cmake --build gz_plugins/dryden_wind/build`,
+   and point `TDR_GZ_PLUGIN_PATH` at the build directory (the runner adds it to Gazebo's plugin path).
+2. Generate a design with the experiment's `make_*_design.py`, and its models, worlds, plans and
+   controllers with `python -m tdresearch generate-models | generate-worlds | generate-plans | generate-controllers`.
+3. Fly it: `python -m tdresearch run-batch <design.csv> --px4-dir ~/PX4-Autopilot --assets-dir <assets>`.
+   Parallel instances use `--instance N`; runs resume and skip completed ULogs.
+4. Score it: `python -m tdresearch analyze <ulog_dir> --flight-segment cruise --metadata <design.csv>`.
+
+The published campaigns were flown in parallel on a multi-host cluster; the per-host orchestration
+is not included, since `run-batch` with distinct `--instance` values is the unit it scheduled.
+
+## Citation
+See [`CITATION.cff`](CITATION.cff).
+
+## License
+Code in this repository: MIT ([`LICENSE`](LICENSE)). Airframe models are derived from PX4 and
+CTU-MRS sources under their own licenses; see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)
+and [`LICENSES/`](LICENSES).

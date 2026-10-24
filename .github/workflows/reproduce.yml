@@ -1,0 +1,53 @@
+name: Reproduce paper
+
+# Full reproduction: download the Zenodo deposit, verify it, re-run every analysis behind the paper,
+# and fail if any committed output in results/ (or analysis_manifest.json) changes beyond timestamps and
+# last-digit float noise (scripts/check_reproduction.py). Run it from the Actions tab.
+on:
+  workflow_dispatch:
+
+env:
+  ZENODO_RECORD: "23749893"
+  ARCHIVE: quadrotor-tracking-sensitivity-data.tar.gz
+  ARCHIVE_MD5: 6f80a977752d61161d2e1ec2d15e9e3c
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Download the Zenodo deposit
+        run: |
+          curl -fsSL --retry 3 -o "$ARCHIVE" \
+            "https://zenodo.org/records/${ZENODO_RECORD}/files/${ARCHIVE}?download=1"
+          echo "${ARCHIVE_MD5}  ${ARCHIVE}" | md5sum -c
+      - name: Extract and verify checksums
+        run: |
+          # the repository already carries DATA_MANIFEST.md and DATA_CHECKSUMS.txt
+          tar -xzf "$ARCHIVE" --exclude=DATA_MANIFEST.md --exclude=DATA_CHECKSUMS.txt
+          rm "$ARCHIVE"
+          sha256sum -c DATA_CHECKSUMS.txt
+      - name: Reproduce
+        run: PY=python bash scripts/reproduce_paper.sh
+      - name: Every step succeeded
+        run: |
+          awk -F'\t' '$2 != 0' reproduce_out/status.tsv > failed_steps.txt
+          cat failed_steps.txt
+          test ! -s failed_steps.txt
+      - name: Committed outputs are unchanged
+        run: python scripts/check_reproduction.py
+      - name: Upload logs and figures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reproduce-output
+          path: |
+            reproduce_out/
+            figures/

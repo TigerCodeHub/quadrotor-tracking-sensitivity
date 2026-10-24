@@ -1,0 +1,14 @@
+====================================================================================================
+ROBUST REFIT -- v4_noretry: 62243 config rows, 5 airframes
+HC3 SEs; ranking by |IQR effect|; airframe fixed effects included
+====================================================================================================
+
+[cross_track_rmse]  n=62243 (dropped 0)  R^2=0.675
+  factor                     b    HC3 se       t   IQR eff  dR2(drop)   partR2
+  mean_wind             0.4249    0.0018   233.4    1.2605     0.3337   0.5063
+  turbulence_rms        0.8488    0.0038   221.8    1.2571     0.3332   0.5059
+  thrust_to_weight     -0.1122    0.0069   -16.1   -0.0837     0.0015   0.0045
+  abs_com_y_frac        1.1656    0.2017     5.8    0.0291     0.0002   0.0005
+  log_payload          -0.0767    0.0381    -2.0   -0.0101     0.0000   0.0001
+  inertia_scale         0.0089    0.0201     0.4    0.0022     0.0000   0.0000
+  RANK (|IQR effect|): mean_wind > turbulence_rms > thrust_to_weight > abs_com_y_frac > log_payload > inertia_scale

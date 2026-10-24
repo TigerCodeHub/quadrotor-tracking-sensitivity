@@ -1,0 +1,2048 @@
+{
+  "cases": {
+    "fixed_s1": {
+      "mode": "fixed",
+      "entities": {
+        "5": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 95.58193236993236,
+          "h_ft_range": [
+            78.456,
+            102.418
+          ],
+          "L_m": {
+            "u": 50.0,
+            "v": 50.0,
+            "w": 50.0
+          },
+          "sigma_target": {
+            "u": 2.0,
+            "v": 2.0,
+            "w": 2.0
+          },
+          "axes": {
+            "u": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 10.0,
+              "target_sigma": 2.0,
+              "rms": 1.8935098472950551,
+              "rms_over_sigma": 0.9467549236475276,
+              "expected_rms_rel_err": 0.05000002500007702,
+              "rms_err_in_expected_sd": -1.0649009945973111,
+              "tau_hat_3tau_s": 8.373024387244683,
+              "tau_analytic_3tau_window_s": 9.502129443012937,
+              "tau_hat_over_analytic_window": 0.8811734714266073,
+              "near_acf_maxdev_1tau": 0.05228171419153671,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9209165380830039,
+                "mid(fc-10fc)": 0.9716586500368636,
+                "hi(>10fc,<10Hz)": 0.999676844210182
+              },
+              "psd_integral_over_sigma2": 0.9013769908443653,
+              "hf_slope": -1.9898600105878417,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 10.0,
+                "target_sigma": 2.0,
+                "rms": 2.0448561099895044,
+                "rms_over_sigma": 1.0224280549947522,
+                "expected_rms_rel_err": 0.05000002500007702,
+                "rms_err_in_expected_sd": 0.4485608756139152,
+                "tau_hat_3tau_s": 11.438397654283133,
+                "tau_analytic_3tau_window_s": 9.502129443012937,
+                "tau_hat_over_analytic_window": 1.203772030562472,
+                "near_acf_maxdev_1tau": 0.057096120488416946,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.078684906441911,
+                  "mid(fc-10fc)": 0.9217440373166236,
+                  "hi(>10fc,<10Hz)": 1.0368214807015084
+                },
+                "psd_integral_over_sigma2": 0.9964064293296577,
+                "hf_slope": -1.99003600726491
+              }
+            },
+            "v": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 1.9810428115220864,
+              "rms_over_sigma": 0.9905214057610432,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": -0.26809499645137286,
+              "tau_hat_3tau_s": 5.363757729532912,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 0.9756063470778183,
+              "near_acf_maxdev_1tau": 0.014836347786109372,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.127032159606262,
+                "mid(fc-10fc)": 0.9555734729366429,
+                "hi(>10fc,<10Hz)": 1.0085642507388406
+              },
+              "psd_integral_over_sigma2": 0.99683760685785,
+              "hf_slope": -1.9791411447263114,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 1.9424051651790561,
+                "rms_over_sigma": 0.9712025825895281,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": -0.8145135580061363,
+                "tau_hat_3tau_s": 5.550029953821181,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 1.0094871398845737,
+                "near_acf_maxdev_1tau": 0.03693897433899368,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9559514942092311,
+                  "mid(fc-10fc)": 0.9722990400841041,
+                  "hi(>10fc,<10Hz)": 0.9711529293801106
+                },
+                "psd_integral_over_sigma2": 0.9441074717623005,
+                "hf_slope": -1.9927180158834321
+              }
+            },
+            "w": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 1.9390725777215216,
+              "rms_over_sigma": 0.9695362888607608,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": -0.8616434382435213,
+              "tau_hat_3tau_s": 4.383373340795157,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 0.7972856099270276,
+              "near_acf_maxdev_1tau": 0.029798985214173207,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9120918065524005,
+                "mid(fc-10fc)": 0.94195546464646,
+                "hi(>10fc,<10Hz)": 0.9831335363287341
+              },
+              "psd_integral_over_sigma2": 0.909845432598951,
+              "hf_slope": -1.9966865713079955,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 1.9963245853230254,
+                "rms_over_sigma": 0.9981622926615127,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": -0.05197818684605303,
+                "tau_hat_3tau_s": 5.808280574656783,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 1.0564599819718956,
+                "near_acf_maxdev_1tau": 0.053254527454462325,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.1281109052223819,
+                  "mid(fc-10fc)": 0.8981478214336053,
+                  "hi(>10fc,<10Hz)": 1.045848754563204
+                },
+                "psd_integral_over_sigma2": 0.99643113952553,
+                "hf_slope": -1.9865529116726357
+              }
+            }
+          }
+        },
+        "7": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 87.11226398796398,
+          "h_ft_range": [
+            61.165,
+            98.4932
+          ],
+          "L_m": {
+            "u": 50.0,
+            "v": 50.0,
+            "w": 50.0
+          },
+          "sigma_target": {
+            "u": 2.0,
+            "v": 2.0,
+            "w": 2.0
+          },
+          "axes": {
+            "u": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 10.0,
+              "target_sigma": 2.0,
+              "rms": 1.901548637896923,
+              "rms_over_sigma": 0.9507743189484615,
+              "expected_rms_rel_err": 0.05000002500007702,
+              "rms_err_in_expected_sd": -0.9845131287726884,
+              "tau_hat_3tau_s": 9.631871652633352,
+              "tau_analytic_3tau_window_s": 9.502129443012937,
+              "tau_hat_over_analytic_window": 1.0136540141237307,
+              "near_acf_maxdev_1tau": 0.014647085700062457,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.8574354977803536,
+                "mid(fc-10fc)": 0.9573945581931268,
+                "hi(>10fc,<10Hz)": 0.9910835317728048
+              },
+              "psd_integral_over_sigma2": 0.8932694935260873,
+              "hf_slope": -1.9975696274517547,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 10.0,
+                "target_sigma": 2.0,
+                "rms": 1.904936963922564,
+                "rms_over_sigma": 0.952468481961282,
+                "expected_rms_rel_err": 0.05000002500007702,
+                "rms_err_in_expected_sd": -0.9506298854579535,
+                "tau_hat_3tau_s": 8.861726154750226,
+                "tau_analytic_3tau_window_s": 9.502129443012937,
+                "tau_hat_over_analytic_window": 0.9326042344399329,
+                "near_acf_maxdev_1tau": 0.034950435583461115,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.7978061933580634,
+                  "mid(fc-10fc)": 0.9824366627630382,
+                  "hi(>10fc,<10Hz)": 0.9997755592649438
+                },
+                "psd_integral_over_sigma2": 0.8769878466812507,
+                "hf_slope": -1.994812592258137
+              }
+            },
+            "v": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 2.0487147954234617,
+              "rms_over_sigma": 1.0243573977117308,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": 0.6889308992943922,
+              "tau_hat_3tau_s": 5.31231917761161,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 0.966250261238482,
+              "near_acf_maxdev_1tau": 0.01983174798849699,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.0947225844261133,
+                "mid(fc-10fc)": 1.0389437916158744,
+                "hi(>10fc,<10Hz)": 0.9783270418424674
+              },
+              "psd_integral_over_sigma2": 1.0404309883118534,
+              "hf_slope": -1.9919891504376668,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 2.0045191737310315,
+                "rms_over_sigma": 1.0022595868655158,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": 0.06391073585598334,
+                "tau_hat_3tau_s": 4.2277627095191885,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 0.7689818111350487,
+                "near_acf_maxdev_1tau": 0.04786632559433948,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9463253107012346,
+                  "mid(fc-10fc)": 1.041224588321766,
+                  "hi(>10fc,<10Hz)": 1.0129774556074744
+                },
+                "psd_integral_over_sigma2": 0.9757384768531429,
+                "hf_slope": -1.9945245929750839
+              }
+            },
+            "w": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 1.9054440872954737,
+              "rms_over_sigma": 0.9527220436477368,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": -1.33722187288008,
+              "tau_hat_3tau_s": 4.575873190547612,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 0.8322991367677292,
+              "near_acf_maxdev_1tau": 0.059149464609350555,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.8249950938256075,
+                "mid(fc-10fc)": 0.9300836383460022,
+                "hi(>10fc,<10Hz)": 1.0033254529512632
+              },
+              "psd_integral_over_sigma2": 0.8945893240654266,
+              "hf_slope": -1.9905354068487506,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 1.9342202852608648,
+                "rms_over_sigma": 0.9671101426304324,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": -0.9302651819971606,
+                "tau_hat_3tau_s": 5.114217987952131,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 0.9302179145626963,
+                "near_acf_maxdev_1tau": 0.06646754965833074,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.8740459144016628,
+                  "mid(fc-10fc)": 0.9742420189679427,
+                  "hi(>10fc,<10Hz)": 1.0192906748416157
+                },
+                "psd_integral_over_sigma2": 0.9195955293730239,
+                "hf_slope": -2.0040972003314446
+              }
+            }
+          }
+        },
+        "9": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 87.406523003523,
+          "h_ft_range": [
+            66.9678,
+            98.9227
+          ],
+          "L_m": {
+            "u": 50.0,
+            "v": 50.0,
+            "w": 50.0
+          },
+          "sigma_target": {
+            "u": 2.0,
+            "v": 2.0,
+            "w": 2.0
+          },
+          "axes": {
+            "u": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 10.0,
+              "target_sigma": 2.0,
+              "rms": 2.1431747135986767,
+              "rms_over_sigma": 1.0715873567993384,
+              "expected_rms_rel_err": 0.05000002500007702,
+              "rms_err_in_expected_sd": 1.431746420111352,
+              "tau_hat_3tau_s": 11.50792998775893,
+              "tau_analytic_3tau_window_s": 9.502129443012937,
+              "tau_hat_over_analytic_window": 1.2110895833165995,
+              "near_acf_maxdev_1tau": 0.08527797651893493,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.2312585522934332,
+                "mid(fc-10fc)": 0.9802325293025044,
+                "hi(>10fc,<10Hz)": 1.0181987850000258
+              },
+              "psd_integral_over_sigma2": 1.1010882348350024,
+              "hf_slope": -1.992430805588008,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 10.0,
+                "target_sigma": 2.0,
+                "rms": 1.9989368889716503,
+                "rms_over_sigma": 0.9994684444858252,
+                "expected_rms_rel_err": 0.05000002500007702,
+                "rms_err_in_expected_sd": -0.010631104967927754,
+                "tau_hat_3tau_s": 9.967074412695007,
+                "tau_analytic_3tau_window_s": 9.502129443012937,
+                "tau_hat_over_analytic_window": 1.0489306078674767,
+                "near_acf_maxdev_1tau": 0.00933486737902739,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.0209493198101207,
+                  "mid(fc-10fc)": 0.9971403657785609,
+                  "hi(>10fc,<10Hz)": 1.0142461922855632
+                },
+                "psd_integral_over_sigma2": 1.00264793904852,
+                "hf_slope": -1.9839731108328928
+              }
+            },
+            "v": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 2.0359853416762745,
+              "rms_over_sigma": 1.0179926708381373,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": 0.5089093279967244,
+              "tau_hat_3tau_s": 4.697019967288011,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 0.8543343535459196,
+              "near_acf_maxdev_1tau": 0.01564726434696939,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9614537554674941,
+                "mid(fc-10fc)": 1.1037752596997312,
+                "hi(>10fc,<10Hz)": 1.0359448104209983
+              },
+              "psd_integral_over_sigma2": 1.0477205588159761,
+              "hf_slope": -1.9962466779530612,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 1.9793905506545904,
+                "rms_over_sigma": 0.9896952753272952,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": -0.29146148204200634,
+                "tau_hat_3tau_s": 4.255537627959623,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 0.7740337519732522,
+                "near_acf_maxdev_1tau": 0.04765247782177634,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9638521783071168,
+                  "mid(fc-10fc)": 0.9991583280533227,
+                  "hi(>10fc,<10Hz)": 0.9875172892191751
+                },
+                "psd_integral_over_sigma2": 0.9430213326721313,
+                "hf_slope": -1.9956403596558623
+              }
+            },
+            "w": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 2.1671522677672055,
+              "rms_over_sigma": 1.0835761338836027,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": 2.363888858629941,
+              "tau_hat_3tau_s": 6.535368896307405,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 1.1887090538460419,
+              "near_acf_maxdev_1tau": 0.06174347359735996,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.4569634121167907,
+                "mid(fc-10fc)": 1.1106434339049778,
+                "hi(>10fc,<10Hz)": 1.007974314586621
+              },
+              "psd_integral_over_sigma2": 1.2041172717489603,
+              "hf_slope": -1.9908625831780549,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 2.0063036690253884,
+                "rms_over_sigma": 1.0031518345126942,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": 0.08914729771036806,
+                "tau_hat_3tau_s": 4.873920538716103,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 0.8865105495990491,
+                "near_acf_maxdev_1tau": 0.02825874640320608,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9891673456896625,
+                  "mid(fc-10fc)": 0.9945807012184593,
+                  "hi(>10fc,<10Hz)": 1.0278132283542973
+                },
+                "psd_integral_over_sigma2": 0.9839097062066466,
+                "hf_slope": -1.9889960320382776
+              }
+            }
+          }
+        }
+      },
+      "cross": {
+        "link_pairs": {
+          "5-7:u": 0.05991681420878592,
+          "5-7:v": 0.029738969996111735,
+          "5-7:w": -0.06411403163877874,
+          "5-9:u": 0.07173864315236178,
+          "5-9:v": 0.0627040879350619,
+          "5-9:w": 0.00912274484289233,
+          "7-9:u": -0.01876212553611575,
+          "7-9:v": 0.04661980815319057,
+          "7-9:w": -0.02213320711944988
+        },
+        "axis_pairs_within_link": {
+          "5:uv": 0.014087925735845623,
+          "5:uw": 0.03687000324382509,
+          "5:vw": 0.006302857546369391,
+          "7:uv": -0.06132223603984424,
+          "7:uw": -0.04958390477575384,
+          "7:vw": -0.0023608737592020743,
+          "9:uv": -0.040614898791028635,
+          "9:uw": 0.007596054867861913,
+          "9:vw": 0.06909667462574391
+        },
+        "null_sd_conservative": 0.07071071347410272,
+        "max_abs_link_r": 0.07173864315236178,
+        "max_abs_axis_r": 0.06909667462574391
+      }
+    },
+    "fixed_s2": {
+      "mode": "fixed",
+      "entities": {
+        "5": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 101.98445825225825,
+          "h_ft_range": [
+            94.795,
+            106.035
+          ],
+          "L_m": {
+            "u": 50.0,
+            "v": 50.0,
+            "w": 50.0
+          },
+          "sigma_target": {
+            "u": 2.0,
+            "v": 2.0,
+            "w": 2.0
+          },
+          "axes": {
+            "u": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 10.0,
+              "target_sigma": 2.0,
+              "rms": 1.9749492028761924,
+              "rms_over_sigma": 0.9874746014380962,
+              "expected_rms_rel_err": 0.05000002500007702,
+              "rms_err_in_expected_sd": -0.2505078459837676,
+              "tau_hat_3tau_s": 8.632639251065722,
+              "tau_analytic_3tau_window_s": 9.502129443012937,
+              "tau_hat_over_analytic_window": 0.9084952276053696,
+              "near_acf_maxdev_1tau": 0.05032684497537898,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9747898176217558,
+                "mid(fc-10fc)": 1.0610574633070742,
+                "hi(>10fc,<10Hz)": 1.0407913349979439
+              },
+              "psd_integral_over_sigma2": 0.9857055981205416,
+              "hf_slope": -1.992333498195624,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 10.0,
+                "target_sigma": 2.0,
+                "rms": 2.074066594175499,
+                "rms_over_sigma": 1.0370332970877496,
+                "expected_rms_rel_err": 0.05000002500007702,
+                "rms_err_in_expected_sd": 0.7406655714210655,
+                "tau_hat_3tau_s": 9.252295715961939,
+                "tau_analytic_3tau_window_s": 9.502129443012937,
+                "tau_hat_over_analytic_window": 0.9737076064318715,
+                "near_acf_maxdev_1tau": 0.019936062690460554,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.1911988563053137,
+                  "mid(fc-10fc)": 1.0910763356914288,
+                  "hi(>10fc,<10Hz)": 1.0040727741143758
+                },
+                "psd_integral_over_sigma2": 1.0617953237728133,
+                "hf_slope": -1.9875058176185956
+              }
+            },
+            "v": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 1.983069505725343,
+              "rms_over_sigma": 0.9915347528626715,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": -0.23943322649201895,
+              "tau_hat_3tau_s": 6.178734776711738,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 1.1238413755863934,
+              "near_acf_maxdev_1tau": 0.017936167640264317,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.1228644423529062,
+                "mid(fc-10fc)": 0.9383426398332404,
+                "hi(>10fc,<10Hz)": 0.986578136954749
+              },
+              "psd_integral_over_sigma2": 0.9944479016518833,
+              "hf_slope": -1.998747679695609,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 1.990723255172336,
+                "rms_over_sigma": 0.995361627586168,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": -0.1311929179029086,
+                "tau_hat_3tau_s": 5.7754996703008725,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 1.050497509398519,
+                "near_acf_maxdev_1tau": 0.023901026668754766,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.8954417964675824,
+                  "mid(fc-10fc)": 1.0158116339388503,
+                  "hi(>10fc,<10Hz)": 0.9975728369433684
+                },
+                "psd_integral_over_sigma2": 0.9970028110983087,
+                "hf_slope": -1.998505158322224
+              }
+            },
+            "w": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 1.9874174650220389,
+              "rms_over_sigma": 0.9937087325110194,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": -0.17794382717647722,
+              "tau_hat_3tau_s": 6.101817717056991,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 1.1098510398214951,
+              "near_acf_maxdev_1tau": 0.006150087574923857,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.0012364130980436,
+                "mid(fc-10fc)": 0.9984726091937277,
+                "hi(>10fc,<10Hz)": 1.020803172569512
+              },
+              "psd_integral_over_sigma2": 0.9987155815312224,
+              "hf_slope": -1.9876547823053539,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 2.02744393675499,
+                "rms_over_sigma": 1.013721968377495,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": 0.38811568157972337,
+                "tau_hat_3tau_s": 5.607019579101577,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 1.019852902647312,
+                "near_acf_maxdev_1tau": 0.04767627760079307,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.059217917824947,
+                  "mid(fc-10fc)": 1.0307263880563295,
+                  "hi(>10fc,<10Hz)": 0.9894243579757858
+                },
+                "psd_integral_over_sigma2": 1.0478639933079685,
+                "hf_slope": -1.992251908932033
+              }
+            }
+          }
+        },
+        "7": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 98.81467226767228,
+          "h_ft_range": [
+            93.3208,
+            104.545
+          ],
+          "L_m": {
+            "u": 50.0,
+            "v": 50.0,
+            "w": 50.0
+          },
+          "sigma_target": {
+            "u": 2.0,
+            "v": 2.0,
+            "w": 2.0
+          },
+          "axes": {
+            "u": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 10.0,
+              "target_sigma": 2.0,
+              "rms": 2.008715537355761,
+              "rms_over_sigma": 1.0043577686778804,
+              "expected_rms_rel_err": 0.05000002500007702,
+              "rms_err_in_expected_sd": 0.08715532997980881,
+              "tau_hat_3tau_s": 9.061448048553846,
+              "tau_analytic_3tau_window_s": 9.502129443012937,
+              "tau_hat_over_analytic_window": 0.9536228803130933,
+              "near_acf_maxdev_1tau": 0.007475430770403746,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.0016589590335763,
+                "mid(fc-10fc)": 1.0231419427461939,
+                "hi(>10fc,<10Hz)": 0.9969543983709519
+              },
+              "psd_integral_over_sigma2": 1.0066087485423898,
+              "hf_slope": -1.9912196083257334,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 10.0,
+                "target_sigma": 2.0,
+                "rms": 1.9666317216651887,
+                "rms_over_sigma": 0.9833158608325944,
+                "expected_rms_rel_err": 0.05000002500007702,
+                "rms_err_in_expected_sd": -0.3336826165062904,
+                "tau_hat_3tau_s": 9.709612046193937,
+                "tau_analytic_3tau_window_s": 9.502129443012937,
+                "tau_hat_over_analytic_window": 1.0218353795773185,
+                "near_acf_maxdev_1tau": 0.010064243554399055,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.1572503099505247,
+                  "mid(fc-10fc)": 0.9828270449595977,
+                  "hi(>10fc,<10Hz)": 1.0076330267254558
+                },
+                "psd_integral_over_sigma2": 0.990788779570044,
+                "hf_slope": -1.9916490598307761
+              }
+            },
+            "v": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 1.9781672055528166,
+              "rms_over_sigma": 0.9890836027764083,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": -0.3087621857355399,
+              "tau_hat_3tau_s": 6.271152713946867,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 1.1406511441659826,
+              "near_acf_maxdev_1tau": 0.019044111441226697,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.2963767967461006,
+                "mid(fc-10fc)": 0.9216242083441849,
+                "hi(>10fc,<10Hz)": 0.9986753758199532
+              },
+              "psd_integral_over_sigma2": 1.001523359209648,
+              "hf_slope": -1.9972860215661141,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 2.0375969725956815,
+                "rms_over_sigma": 1.0187984862978408,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": 0.531701219638395,
+                "tau_hat_3tau_s": 6.058912878527753,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 1.1020471391048385,
+                "near_acf_maxdev_1tau": 0.04230431453847083,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.0145793456639698,
+                  "mid(fc-10fc)": 0.9558757631789992,
+                  "hi(>10fc,<10Hz)": 0.9979026008999682
+                },
+                "psd_integral_over_sigma2": 1.002688429951258,
+                "hf_slope": -1.995235193638455
+              }
+            },
+            "w": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 2.0254613775623853,
+              "rms_over_sigma": 1.0127306887811927,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": 0.36007807461468133,
+              "tau_hat_3tau_s": 8.080661684988556,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 1.4697801850848864,
+              "near_acf_maxdev_1tau": 0.055299250616602985,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.1013168646927063,
+                "mid(fc-10fc)": 0.9126499511877476,
+                "hi(>10fc,<10Hz)": 1.0091405469459567
+              },
+              "psd_integral_over_sigma2": 0.9864363758067621,
+              "hf_slope": -1.9906094815017992,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 1.9623042513746503,
+                "rms_over_sigma": 0.9811521256873251,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": -0.5330981229478831,
+                "tau_hat_3tau_s": 4.7419206412989965,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 0.8625012739703819,
+                "near_acf_maxdev_1tau": 0.036256437482209664,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9939459699893339,
+                  "mid(fc-10fc)": 1.0458845224171025,
+                  "hi(>10fc,<10Hz)": 1.0347910496198955
+                },
+                "psd_integral_over_sigma2": 1.012626709096298,
+                "hf_slope": -1.994100516006636
+              }
+            }
+          }
+        },
+        "9": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 83.03893092763093,
+          "h_ft_range": [
+            61.3266,
+            98.4823
+          ],
+          "L_m": {
+            "u": 50.0,
+            "v": 50.0,
+            "w": 50.0
+          },
+          "sigma_target": {
+            "u": 2.0,
+            "v": 2.0,
+            "w": 2.0
+          },
+          "axes": {
+            "u": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 10.0,
+              "target_sigma": 2.0,
+              "rms": 2.0567555045107757,
+              "rms_over_sigma": 1.0283777522553879,
+              "expected_rms_rel_err": 0.05000002500007702,
+              "rms_err_in_expected_sd": 0.5675547613295022,
+              "tau_hat_3tau_s": 10.18966621746597,
+              "tau_analytic_3tau_window_s": 9.502129443012937,
+              "tau_hat_over_analytic_window": 1.072356073296664,
+              "near_acf_maxdev_1tau": 0.050760992606570465,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9651395237313687,
+                "mid(fc-10fc)": 0.9658073878796612,
+                "hi(>10fc,<10Hz)": 0.9998394750793463
+              },
+              "psd_integral_over_sigma2": 1.0150739719221173,
+              "hf_slope": -1.996541339417035,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 10.0,
+                "target_sigma": 2.0,
+                "rms": 2.0336046566463493,
+                "rms_over_sigma": 1.0168023283231746,
+                "expected_rms_rel_err": 0.05000002500007702,
+                "rms_err_in_expected_sd": 0.3360463984397758,
+                "tau_hat_3tau_s": 8.541107058973992,
+                "tau_analytic_3tau_window_s": 9.502129443012937,
+                "tau_hat_over_analytic_window": 0.8988624192290288,
+                "near_acf_maxdev_1tau": 0.013843741283663225,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.2692203284754489,
+                  "mid(fc-10fc)": 1.0756749175845919,
+                  "hi(>10fc,<10Hz)": 0.9915620580491719
+                },
+                "psd_integral_over_sigma2": 1.053028807358312,
+                "hf_slope": -1.9948814245320337
+              }
+            },
+            "v": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 2.075662159384328,
+              "rms_over_sigma": 1.037831079692164,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": 1.0700239845838715,
+              "tau_hat_3tau_s": 5.202360793450945,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 0.9462500854455107,
+              "near_acf_maxdev_1tau": 0.024312271227154125,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9888654215353415,
+                "mid(fc-10fc)": 1.105545608225871,
+                "hi(>10fc,<10Hz)": 1.03560908668226
+              },
+              "psd_integral_over_sigma2": 1.0615788587609145,
+              "hf_slope": -1.994188103710464,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 1.9661584054378707,
+                "rms_over_sigma": 0.9830792027189353,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": -0.47859218072412113,
+                "tau_hat_3tau_s": 5.842723088091297,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 1.062724682282838,
+                "near_acf_maxdev_1tau": 0.005495511309306311,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.063202519095283,
+                  "mid(fc-10fc)": 0.9524182796443904,
+                  "hi(>10fc,<10Hz)": 0.9929000677840573
+                },
+                "psd_integral_over_sigma2": 0.9713672493439263,
+                "hf_slope": -1.993299225335102
+              }
+            },
+            "w": {
+              "tau_s": 10.0,
+              "tau_int_analytic_s": 5.0,
+              "target_sigma": 2.0,
+              "rms": 1.8733502335758192,
+              "rms_over_sigma": 0.9366751167879096,
+              "expected_rms_rel_err": 0.03535535673705136,
+              "rms_err_in_expected_sd": -1.7910972779332137,
+              "tau_hat_3tau_s": 5.872288734557948,
+              "tau_analytic_3tau_window_s": 5.497870883680379,
+              "tau_hat_over_analytic_window": 1.0681023361223292,
+              "near_acf_maxdev_1tau": 0.02860671770914819,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.7916608936237944,
+                "mid(fc-10fc)": 0.8723921956320315,
+                "hi(>10fc,<10Hz)": 0.96453967587415
+              },
+              "psd_integral_over_sigma2": 0.8546920774515667,
+              "hf_slope": -1.9930932888898254,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 10.0,
+                "tau_int_analytic_s": 5.0,
+                "target_sigma": 2.0,
+                "rms": 2.0562063661806906,
+                "rms_over_sigma": 1.0281031830903453,
+                "expected_rms_rel_err": 0.03535535673705136,
+                "rms_err_in_expected_sd": 0.7948776560043592,
+                "tau_hat_3tau_s": 4.518931851478316,
+                "tau_analytic_3tau_window_s": 5.497870883680379,
+                "tau_hat_over_analytic_window": 0.8219421567159935,
+                "near_acf_maxdev_1tau": 0.03931572094825314,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.00707596883419,
+                  "mid(fc-10fc)": 1.0953477132463527,
+                  "hi(>10fc,<10Hz)": 0.9884185185644045
+                },
+                "psd_integral_over_sigma2": 1.0384931231068677,
+                "hf_slope": -1.9998501799904072
+              }
+            }
+          }
+        }
+      },
+      "cross": {
+        "link_pairs": {
+          "5-7:u": -0.018021059259568185,
+          "5-7:v": 0.01701534805894037,
+          "5-7:w": 0.0015373456850937836,
+          "5-9:u": -0.043761862123978194,
+          "5-9:v": 0.0678635283170471,
+          "5-9:w": -0.07940945669343162,
+          "7-9:u": 0.011719451946864731,
+          "7-9:v": 0.033139539151489636,
+          "7-9:w": -0.05361665847711907
+        },
+        "axis_pairs_within_link": {
+          "5:uv": 0.01887895325483654,
+          "5:uw": -0.0602593950974115,
+          "5:vw": 0.0009371861551657259,
+          "7:uv": -0.0013170063140867942,
+          "7:uw": -0.014610968194155785,
+          "7:vw": -0.009771019878025576,
+          "9:uv": -0.002289226778230053,
+          "9:uw": -0.03755660143835245,
+          "9:vw": -0.05585152018395691
+        },
+        "null_sd_conservative": 0.07071071347410272,
+        "max_abs_link_r": 0.07940945669343162,
+        "max_abs_axis_r": 0.0602593950974115
+      }
+    },
+    "alt10m": {
+      "mode": "w20",
+      "entities": {
+        "5": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 32.74242644602645,
+          "h_ft_range": [
+            31.342,
+            33.6156
+          ],
+          "L_m": {
+            "u": 67.24799688229687,
+            "v": 67.24799688229687,
+            "w": 9.97989154811155
+          },
+          "sigma_target": {
+            "u": 1.3221815633666785,
+            "v": 1.3221815633666785,
+            "w": 0.7000000000000001
+          },
+          "axes": {
+            "u": {
+              "tau_s": 13.449599376459375,
+              "tau_int_analytic_s": 13.449599376459375,
+              "target_sigma": 1.3221815633666785,
+              "rms": 1.2986452375157764,
+              "rms_over_sigma": 0.9821988700319104,
+              "expected_rms_rel_err": 0.05798623290511194,
+              "rms_err_in_expected_sd": -0.30698890195573075,
+              "tau_hat_3tau_s": 12.567119792136634,
+              "tau_analytic_3tau_window_s": 12.779943609277145,
+              "tau_hat_over_analytic_window": 0.9833470456797618,
+              "near_acf_maxdev_1tau": 0.01296964542919432,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.7966372959362906,
+                "mid(fc-10fc)": 0.9738647270413612,
+                "hi(>10fc,<10Hz)": 0.9622612962883583
+              },
+              "psd_integral_over_sigma2": 0.8990851923486183,
+              "hf_slope": -1.9930317541461704,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 13.449599376459375,
+                "tau_int_analytic_s": 13.449599376459375,
+                "target_sigma": 1.3221815633666785,
+                "rms": 1.3874310939885814,
+                "rms_over_sigma": 1.0493499020329384,
+                "expected_rms_rel_err": 0.05798623290511194,
+                "rms_err_in_expected_sd": 0.8510623912005818,
+                "tau_hat_3tau_s": 14.160984063852469,
+                "tau_analytic_3tau_window_s": 12.779943609277145,
+                "tau_hat_over_analytic_window": 1.1080631101981393,
+                "near_acf_maxdev_1tau": 0.05534473796697059,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9691346747132347,
+                  "mid(fc-10fc)": 1.0147573189217403,
+                  "hi(>10fc,<10Hz)": 1.000629412332484
+                },
+                "psd_integral_over_sigma2": 1.0633319988657546,
+                "hf_slope": -1.9913319854452838
+              }
+            },
+            "v": {
+              "tau_s": 13.449599376459375,
+              "tau_int_analytic_s": 6.724799688229687,
+              "target_sigma": 1.3221815633666785,
+              "rms": 1.3578516471223203,
+              "rms_over_sigma": 1.0269782038593964,
+              "expected_rms_rel_err": 0.04100245850266717,
+              "rms_err_in_expected_sd": 0.6579655182784104,
+              "tau_hat_3tau_s": 7.147139312645159,
+              "tau_analytic_3tau_window_s": 7.3944358288723055,
+              "tau_hat_over_analytic_window": 0.9665564051199751,
+              "near_acf_maxdev_1tau": 0.02606068167340489,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9901668674122897,
+                "mid(fc-10fc)": 1.0638317370883439,
+                "hi(>10fc,<10Hz)": 0.9753393614246699
+              },
+              "psd_integral_over_sigma2": 1.0172773323190722,
+              "hf_slope": -1.996659991082503,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 13.449599376459375,
+                "tau_int_analytic_s": 6.724799688229687,
+                "target_sigma": 1.3221815633666785,
+                "rms": 1.3147502866246719,
+                "rms_over_sigma": 0.9943795338341549,
+                "expected_rms_rel_err": 0.04100245850266717,
+                "rms_err_in_expected_sd": -0.13707632105717515,
+                "tau_hat_3tau_s": 7.2099944188691705,
+                "tau_analytic_3tau_window_s": 7.3944358288723055,
+                "tau_hat_over_analytic_window": 0.9750567299153554,
+                "near_acf_maxdev_1tau": 0.048365691815286715,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.3070218393339017,
+                  "mid(fc-10fc)": 0.9381738826774922,
+                  "hi(>10fc,<10Hz)": 0.9817211523719092
+                },
+                "psd_integral_over_sigma2": 0.9960056178085345,
+                "hf_slope": -1.9915144305951948
+              }
+            },
+            "w": {
+              "tau_s": 1.9959783096223098,
+              "tau_int_analytic_s": 0.9979891548111549,
+              "target_sigma": 0.7000000000000001,
+              "rms": 0.7050003831845969,
+              "rms_over_sigma": 1.007143404549424,
+              "expected_rms_rel_err": 0.015795491071850486,
+              "rms_err_in_expected_sd": 0.4522432710024768,
+              "tau_hat_3tau_s": 1.0602271745911507,
+              "tau_analytic_3tau_window_s": 1.0973624455382958,
+              "tau_hat_over_analytic_window": 0.9661595208601029,
+              "near_acf_maxdev_1tau": 0.010175948530350337,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9659991867667943,
+                "mid(fc-10fc)": 1.015280657255245,
+                "hi(>10fc,<10Hz)": 1.0020932329119467
+              },
+              "psd_integral_over_sigma2": 0.9921106942335929,
+              "hf_slope": -1.9904737398601315,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 1.9959783096223098,
+                "tau_int_analytic_s": 0.9979891548111549,
+                "target_sigma": 0.7000000000000001,
+                "rms": 0.6967299817155626,
+                "rms_over_sigma": 0.9953285453079465,
+                "expected_rms_rel_err": 0.015795491071850486,
+                "rms_err_in_expected_sd": -0.2957460879692847,
+                "tau_hat_3tau_s": 1.0847999681568796,
+                "tau_analytic_3tau_window_s": 1.0973624455382958,
+                "tau_hat_over_analytic_window": 0.9885521165477339,
+                "near_acf_maxdev_1tau": 0.008390645401629204,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9934808939089839,
+                  "mid(fc-10fc)": 0.9982934087850652,
+                  "hi(>10fc,<10Hz)": 0.9966765020518218
+                },
+                "psd_integral_over_sigma2": 0.9985601689648105,
+                "hf_slope": -1.9889678053842488
+              }
+            }
+          }
+        },
+        "7": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 32.288190977790975,
+          "h_ft_range": [
+            31.2045,
+            32.9248
+          ],
+          "L_m": {
+            "u": 66.46306068696069,
+            "v": 66.46306068696069,
+            "w": 9.84144056887057
+          },
+          "sigma_target": {
+            "u": 1.3231522349444609,
+            "v": 1.3231522349444609,
+            "w": 0.7000000000000001
+          },
+          "axes": {
+            "u": {
+              "tau_s": 13.292612137392137,
+              "tau_int_analytic_s": 13.292612137392137,
+              "target_sigma": 1.3231522349444609,
+              "rms": 1.3186026419460317,
+              "rms_over_sigma": 0.9965615498517295,
+              "expected_rms_rel_err": 0.057646824348893115,
+              "rms_err_in_expected_sd": -0.05964682681321909,
+              "tau_hat_3tau_s": 11.935065602656305,
+              "tau_analytic_3tau_window_s": 12.630720607532865,
+              "tau_hat_over_analytic_window": 0.9449235695656448,
+              "near_acf_maxdev_1tau": 0.018716421512534553,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.1506086847803882,
+                "mid(fc-10fc)": 1.0216297851410476,
+                "hi(>10fc,<10Hz)": 1.0075102656006243
+              },
+              "psd_integral_over_sigma2": 0.9879160470250363,
+              "hf_slope": -1.9928706721244873,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 13.292612137392137,
+                "tau_int_analytic_s": 13.292612137392137,
+                "target_sigma": 1.3231522349444609,
+                "rms": 1.349219569156601,
+                "rms_over_sigma": 1.019700933515964,
+                "expected_rms_rel_err": 0.057646824348893115,
+                "rms_err_in_expected_sd": 0.3417522775709014,
+                "tau_hat_3tau_s": 13.218346101083164,
+                "tau_analytic_3tau_window_s": 12.630720607532865,
+                "tau_hat_over_analytic_window": 1.0465235129340003,
+                "near_acf_maxdev_1tau": 0.028382346262125602,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.9636627658190368,
+                  "mid(fc-10fc)": 0.997708486124222,
+                  "hi(>10fc,<10Hz)": 0.954597689076758
+                },
+                "psd_integral_over_sigma2": 1.01636996569931,
+                "hf_slope": -1.9906313408151908
+              }
+            },
+            "v": {
+              "tau_s": 13.292612137392137,
+              "tau_int_analytic_s": 6.646306068696068,
+              "target_sigma": 1.3231522349444609,
+              "rms": 1.3017947746012961,
+              "rms_over_sigma": 0.9838586522554895,
+              "expected_rms_rel_err": 0.040762460410972104,
+              "rms_err_in_expected_sd": -0.3959856098422775,
+              "tau_hat_3tau_s": 7.9282050991542885,
+              "tau_analytic_3tau_window_s": 7.308152123218538,
+              "tau_hat_over_analytic_window": 1.084844016035982,
+              "near_acf_maxdev_1tau": 0.020031557636187636,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.931283572079171,
+                "mid(fc-10fc)": 0.982261661059035,
+                "hi(>10fc,<10Hz)": 1.0031631082524128
+              },
+              "psd_integral_over_sigma2": 0.9693634175308211,
+              "hf_slope": -1.994503771266299,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 13.292612137392137,
+                "tau_int_analytic_s": 6.646306068696068,
+                "target_sigma": 1.3231522349444609,
+                "rms": 1.3237907990358333,
+                "rms_over_sigma": 1.0004826081795488,
+                "expected_rms_rel_err": 0.040762460410972104,
+                "rms_err_in_expected_sd": 0.01183952525640261,
+                "tau_hat_3tau_s": 8.126065134304067,
+                "tau_analytic_3tau_window_s": 7.308152123218538,
+                "tau_hat_over_analytic_window": 1.1119178962472551,
+                "near_acf_maxdev_1tau": 0.06729552107514244,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.2436885271988465,
+                  "mid(fc-10fc)": 0.9318188027015136,
+                  "hi(>10fc,<10Hz)": 1.0490673903469296
+                },
+                "psd_integral_over_sigma2": 1.005751948931755,
+                "hf_slope": -1.993636904063309
+              }
+            },
+            "w": {
+              "tau_s": 1.9682881137741142,
+              "tau_int_analytic_s": 0.9841440568870571,
+              "target_sigma": 0.7000000000000001,
+              "rms": 0.6854280124846687,
+              "rms_over_sigma": 0.979182874978098,
+              "expected_rms_rel_err": 0.01568554303358981,
+              "rms_err_in_expected_sd": -1.3271536074538948,
+              "tau_hat_3tau_s": 1.002375055242208,
+              "tau_analytic_3tau_window_s": 1.08216188438897,
+              "tau_hat_over_analytic_window": 0.9262708932020713,
+              "near_acf_maxdev_1tau": 0.010716167574599311,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9489779972319967,
+                "mid(fc-10fc)": 0.9655078081695028,
+                "hi(>10fc,<10Hz)": 0.9884785205775747
+              },
+              "psd_integral_over_sigma2": 0.9595671039451452,
+              "hf_slope": -1.983669844642434,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 1.9682881137741142,
+                "tau_int_analytic_s": 0.9841440568870571,
+                "target_sigma": 0.7000000000000001,
+                "rms": 0.6887019166190412,
+                "rms_over_sigma": 0.9838598808843445,
+                "expected_rms_rel_err": 0.01568554303358981,
+                "rms_err_in_expected_sd": -1.0289805766425957,
+                "tau_hat_3tau_s": 1.0114802236209675,
+                "tau_analytic_3tau_window_s": 1.08216188438897,
+                "tau_hat_over_analytic_window": 0.934684762245242,
+                "near_acf_maxdev_1tau": 0.03380925882618191,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 0.8777737005964237,
+                  "mid(fc-10fc)": 1.0108978332768408,
+                  "hi(>10fc,<10Hz)": 1.0252019554009795
+                },
+                "psd_integral_over_sigma2": 0.9599794340348939,
+                "hf_slope": -1.9985331186912874
+              }
+            }
+          }
+        },
+        "9": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 33.19929540819541,
+          "h_ft_range": [
+            32.455,
+            34.0565
+          ],
+          "L_m": {
+            "u": 68.03747517897517,
+            "v": 68.03747517897517,
+            "w": 10.119145525085525
+          },
+          "sigma_target": {
+            "u": 1.321207773591639,
+            "v": 1.321207773591639,
+            "w": 0.7000000000000001
+          },
+          "axes": {
+            "u": {
+              "tau_s": 13.607495035795035,
+              "tau_int_analytic_s": 13.607495035795035,
+              "target_sigma": 1.321207773591639,
+              "rms": 1.315206480948985,
+              "rms_over_sigma": 0.9954577222730534,
+              "expected_rms_rel_err": 0.05832561324867358,
+              "rms_err_in_expected_sd": -0.07787792487633889,
+              "tau_hat_3tau_s": 12.387005144465506,
+              "tau_analytic_3tau_window_s": 12.93009326109922,
+              "tau_hat_over_analytic_window": 0.9579981284228151,
+              "near_acf_maxdev_1tau": 0.0034014878209306376,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.1071959328358696,
+                "mid(fc-10fc)": 0.9644462993246999,
+                "hi(>10fc,<10Hz)": 0.9747514631960246
+              },
+              "psd_integral_over_sigma2": 0.9392723599626408,
+              "hf_slope": -1.9919098356471427,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 13.607495035795035,
+                "tau_int_analytic_s": 13.607495035795035,
+                "target_sigma": 1.321207773591639,
+                "rms": 1.3526675639341423,
+                "rms_over_sigma": 1.023811387558659,
+                "expected_rms_rel_err": 0.05832561324867358,
+                "rms_err_in_expected_sd": 0.4082492447552702,
+                "tau_hat_3tau_s": 12.508060186435818,
+                "tau_analytic_3tau_window_s": 12.93009326109922,
+                "tau_hat_over_analytic_window": 0.9673603997944,
+                "near_acf_maxdev_1tau": 0.003304695259924162,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.0927351033713872,
+                  "mid(fc-10fc)": 1.0572326508233727,
+                  "hi(>10fc,<10Hz)": 1.034629977732508
+                },
+                "psd_integral_over_sigma2": 1.0572334194107458,
+                "hf_slope": -1.9901082659191065
+              }
+            },
+            "v": {
+              "tau_s": 13.607495035795035,
+              "tau_int_analytic_s": 6.803747517897517,
+              "target_sigma": 1.321207773591639,
+              "rms": 1.2630449170455362,
+              "rms_over_sigma": 0.9559775095873151,
+              "expected_rms_rel_err": 0.041242436645001025,
+              "rms_err_in_expected_sd": -1.0674076023105403,
+              "tau_hat_3tau_s": 6.481071447973471,
+              "tau_analytic_3tau_window_s": 7.4811872395094605,
+              "tau_hat_over_analytic_window": 0.8663158988650621,
+              "near_acf_maxdev_1tau": 0.013718288421662672,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.7462461000565305,
+                "mid(fc-10fc)": 0.9836365218133103,
+                "hi(>10fc,<10Hz)": 0.9737914507240207
+              },
+              "psd_integral_over_sigma2": 0.9103413687741428,
+              "hf_slope": -1.9944252741741155,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 13.607495035795035,
+                "tau_int_analytic_s": 6.803747517897517,
+                "target_sigma": 1.321207773591639,
+                "rms": 1.3370423944393703,
+                "rms_over_sigma": 1.0119849588870384,
+                "expected_rms_rel_err": 0.041242436645001025,
+                "rms_err_in_expected_sd": 0.29059774014324935,
+                "tau_hat_3tau_s": 7.141933725908698,
+                "tau_analytic_3tau_window_s": 7.4811872395094605,
+                "tau_hat_over_analytic_window": 0.954652449839899,
+                "near_acf_maxdev_1tau": 0.009754634880769497,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.284080640480954,
+                  "mid(fc-10fc)": 1.002437163540864,
+                  "hi(>10fc,<10Hz)": 1.0101837654666483
+                },
+                "psd_integral_over_sigma2": 1.0492743641948767,
+                "hf_slope": -1.9928153643328335
+              }
+            },
+            "w": {
+              "tau_s": 2.023829105017105,
+              "tau_int_analytic_s": 1.0119145525085524,
+              "target_sigma": 0.7000000000000001,
+              "rms": 0.6970046951604686,
+              "rms_over_sigma": 0.9957209930863836,
+              "expected_rms_rel_err": 0.01590531015436728,
+              "rms_err_in_expected_sd": -0.26903008316637256,
+              "tau_hat_3tau_s": 1.0781332793543708,
+              "tau_analytic_3tau_window_s": 1.1126632962148861,
+              "tau_hat_over_analytic_window": 0.9689663378148795,
+              "near_acf_maxdev_1tau": 0.015492869899872141,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.9797017977001946,
+                "mid(fc-10fc)": 0.9958293677835328,
+                "hi(>10fc,<10Hz)": 1.0010775689394202
+              },
+              "psd_integral_over_sigma2": 0.9882031862149364,
+              "hf_slope": -1.9878256857619012,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 2.023829105017105,
+                "tau_int_analytic_s": 1.0119145525085524,
+                "target_sigma": 0.7000000000000001,
+                "rms": 0.7033778208057967,
+                "rms_over_sigma": 1.0048254582939953,
+                "expected_rms_rel_err": 0.01590531015436728,
+                "rms_err_in_expected_sd": 0.30338662039044256,
+                "tau_hat_3tau_s": 1.1854613526203974,
+                "tau_analytic_3tau_window_s": 1.1126632962148861,
+                "tau_hat_over_analytic_window": 1.0654268516389094,
+                "near_acf_maxdev_1tau": 0.005114818923907527,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.0693445845732676,
+                  "mid(fc-10fc)": 1.004572192506241,
+                  "hi(>10fc,<10Hz)": 1.0062802945980498
+                },
+                "psd_integral_over_sigma2": 1.0225447752573975,
+                "hf_slope": -1.9944973385088347
+              }
+            }
+          }
+        }
+      },
+      "cross": {
+        "link_pairs": {
+          "5-7:u": -0.03245705229238771,
+          "5-7:v": 0.026354695888878208,
+          "5-7:w": -0.01895246697913,
+          "5-9:u": 1.692665108939557e-05,
+          "5-9:v": 0.03584577209270729,
+          "5-9:w": -0.006662960085098897,
+          "7-9:u": 0.038209731107854784,
+          "7-9:v": -0.023693489148101928,
+          "7-9:w": 0.029564589537036112
+        },
+        "axis_pairs_within_link": {
+          "5:uv": -0.0238966245622032,
+          "5:uw": -0.03143624336322109,
+          "5:vw": -0.04904962965533658,
+          "7:uv": 0.015688061914730052,
+          "7:uw": 0.013116649012672016,
+          "7:vw": -0.03564601877947398,
+          "9:uv": -0.02692500654841766,
+          "9:uw": 0.04333994954654446,
+          "9:vw": -0.016736395832700365
+        },
+        "null_sd_conservative": 0.08200491700533434,
+        "max_abs_link_r": 0.038209731107854784,
+        "max_abs_axis_r": 0.04904962965533658
+      }
+    },
+    "alt60m": {
+      "mode": "w20",
+      "entities": {
+        "5": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 198.72775006075005,
+          "h_ft_range": [
+            196.85,
+            202.256
+          ],
+          "L_m": {
+            "u": 220.62048315748316,
+            "v": 220.62048315748316,
+            "w": 60.57221878081878
+          },
+          "sigma_target": {
+            "u": 1.0770210395934952,
+            "v": 1.0770210395934952,
+            "w": 0.7000000000000001
+          },
+          "axes": {
+            "u": {
+              "tau_s": 44.124096631496634,
+              "tau_int_analytic_s": 44.124096631496634,
+              "target_sigma": 1.0770210395934952,
+              "rms": 0.9674000378262643,
+              "rms_over_sigma": 0.898218328391611,
+              "expected_rms_rel_err": 0.10502873506300577,
+              "rms_err_in_expected_sd": -0.9690840468309091,
+              "tau_hat_3tau_s": 27.239402476710946,
+              "tau_analytic_3tau_window_s": 41.92727281148785,
+              "tau_hat_over_analytic_window": 0.649682191331259,
+              "near_acf_maxdev_1tau": 0.10716083688540368,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": null,
+                "mid(fc-10fc)": 1.0829203320442256,
+                "hi(>10fc,<10Hz)": 1.0264019889177587
+              },
+              "psd_integral_over_sigma2": 0.8271080112720692,
+              "hf_slope": -1.9850600005078276,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 44.124096631496634,
+                "tau_int_analytic_s": 44.124096631496634,
+                "target_sigma": 1.0770210395934952,
+                "rms": 1.0401825990705156,
+                "rms_over_sigma": 0.965795988036702,
+                "expected_rms_rel_err": 0.10502873506300577,
+                "rms_err_in_expected_sd": -0.32566337148380736,
+                "tau_hat_3tau_s": 36.865868702993225,
+                "tau_analytic_3tau_window_s": 41.92727281148785,
+                "tau_hat_over_analytic_window": 0.8792813419739567,
+                "near_acf_maxdev_1tau": 0.1327656336597895,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": null,
+                  "mid(fc-10fc)": 1.1130483024956535,
+                  "hi(>10fc,<10Hz)": 1.0397057958645397
+                },
+                "psd_integral_over_sigma2": 0.7779674034726857,
+                "hf_slope": -1.9997843012110998
+              }
+            },
+            "v": {
+              "tau_s": 44.124096631496634,
+              "tau_int_analytic_s": 22.062048315748317,
+              "target_sigma": 1.0770210395934952,
+              "rms": 1.1181624443645721,
+              "rms_over_sigma": 1.0381992581933266,
+              "expected_rms_rel_err": 0.07426653078249669,
+              "rms_err_in_expected_sd": 0.5143536097734281,
+              "tau_hat_3tau_s": 21.871328730937503,
+              "tau_analytic_3tau_window_s": 24.258864993243648,
+              "tau_hat_over_analytic_window": 0.9015808751575517,
+              "near_acf_maxdev_1tau": 0.033293030335922014,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": null,
+                "mid(fc-10fc)": 1.1091792886059073,
+                "hi(>10fc,<10Hz)": 0.9733312969758432
+              },
+              "psd_integral_over_sigma2": 0.9906911078368339,
+              "hf_slope": -1.9942062928110629,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 44.124096631496634,
+                "tau_int_analytic_s": 22.062048315748317,
+                "target_sigma": 1.0770210395934952,
+                "rms": 1.0438719007873911,
+                "rms_over_sigma": 0.9692214566034701,
+                "expected_rms_rel_err": 0.07426653078249669,
+                "rms_err_in_expected_sd": -0.4144335688261854,
+                "tau_hat_3tau_s": 18.12844428280103,
+                "tau_analytic_3tau_window_s": 24.258864993243648,
+                "tau_hat_over_analytic_window": 0.7472915277713938,
+                "near_acf_maxdev_1tau": 0.043381398954353,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": null,
+                  "mid(fc-10fc)": 0.9666291490452671,
+                  "hi(>10fc,<10Hz)": 0.9811588802672468
+                },
+                "psd_integral_over_sigma2": 0.8701232322285567,
+                "hf_slope": -1.9864091369995263
+              }
+            },
+            "w": {
+              "tau_s": 12.114443756163755,
+              "tau_int_analytic_s": 6.057221878081878,
+              "target_sigma": 0.7000000000000001,
+              "rms": 0.6670606566006806,
+              "rms_over_sigma": 0.9529437951438293,
+              "expected_rms_rel_err": 0.03891409749475096,
+              "rms_err_in_expected_sd": -1.2092328458219543,
+              "tau_hat_3tau_s": 6.892650983076764,
+              "tau_analytic_3tau_window_s": 6.660348035612426,
+              "tau_hat_over_analytic_window": 1.0348784997754217,
+              "near_acf_maxdev_1tau": 0.045486086971492534,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 0.8546619357056261,
+                "mid(fc-10fc)": 0.9108018734149209,
+                "hi(>10fc,<10Hz)": 1.0117363117408087
+              },
+              "psd_integral_over_sigma2": 0.89437752604531,
+              "hf_slope": -1.9951770005646634,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 12.114443756163755,
+                "tau_int_analytic_s": 6.057221878081878,
+                "target_sigma": 0.7000000000000001,
+                "rms": 0.7257132081069828,
+                "rms_over_sigma": 1.0367331544385467,
+                "expected_rms_rel_err": 0.03891409749475096,
+                "rms_err_in_expected_sd": 0.9439549367295902,
+                "tau_hat_3tau_s": 6.8123202273072385,
+                "tau_analytic_3tau_window_s": 6.660348035612426,
+                "tau_hat_over_analytic_window": 1.0228174550161986,
+                "near_acf_maxdev_1tau": 0.0456191086246123,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.3204705590298922,
+                  "mid(fc-10fc)": 1.0314284324999905,
+                  "hi(>10fc,<10Hz)": 1.0409227892777129
+                },
+                "psd_integral_over_sigma2": 1.0626425762606613,
+                "hf_slope": -2.0017152023247164
+              }
+            }
+          }
+        },
+        "7": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 199.3054612234612,
+          "h_ft_range": [
+            196.85,
+            201.319
+          ],
+          "L_m": {
+            "u": 220.89228993328993,
+            "v": 220.89228993328993,
+            "w": 60.748304633004636
+          },
+          "sigma_target": {
+            "u": 1.0764201620471683,
+            "v": 1.0764201620471683,
+            "w": 0.7000000000000001
+          },
+          "axes": {
+            "u": {
+              "tau_s": 44.17845798665799,
+              "tau_int_analytic_s": 44.17845798665799,
+              "target_sigma": 1.0764201620471683,
+              "rms": 1.1034160675200257,
+              "rms_over_sigma": 1.0250793383705448,
+              "expected_rms_rel_err": 0.10509341340595889,
+              "rms_err_in_expected_sd": 0.23863853649578717,
+              "tau_hat_3tau_s": 36.99678716852569,
+              "tau_analytic_3tau_window_s": 41.97897327562884,
+              "tau_hat_over_analytic_window": 0.8813171042943162,
+              "near_acf_maxdev_1tau": 0.05693313631727254,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": null,
+                "mid(fc-10fc)": 1.0087637148410045,
+                "hi(>10fc,<10Hz)": 0.936512245451534
+              },
+              "psd_integral_over_sigma2": 0.9852321922767312,
+              "hf_slope": -1.9810015140865662,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 44.17845798665799,
+                "tau_int_analytic_s": 44.17845798665799,
+                "target_sigma": 1.0764201620471683,
+                "rms": 1.0588402074839594,
+                "rms_over_sigma": 0.9836681296179227,
+                "expected_rms_rel_err": 0.10509341340595889,
+                "rms_err_in_expected_sd": -0.15540336784941894,
+                "tau_hat_3tau_s": 27.523784408053334,
+                "tau_analytic_3tau_window_s": 41.97897327562884,
+                "tau_hat_over_analytic_window": 0.6556564456051726,
+                "near_acf_maxdev_1tau": 0.16287856838137896,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": null,
+                  "mid(fc-10fc)": 1.1965275579322043,
+                  "hi(>10fc,<10Hz)": 1.0406026189172064
+                },
+                "psd_integral_over_sigma2": 0.8676191373735539,
+                "hf_slope": -1.9861789827695595
+              }
+            },
+            "v": {
+              "tau_s": 44.17845798665799,
+              "tau_int_analytic_s": 22.089228993328994,
+              "target_sigma": 1.0764201620471683,
+              "rms": 1.045310825625992,
+              "rms_over_sigma": 0.9710992626132052,
+              "expected_rms_rel_err": 0.07431226527739475,
+              "rms_err_in_expected_sd": -0.3889093849973938,
+              "tau_hat_3tau_s": 21.912170739393794,
+              "tau_analytic_3tau_window_s": 24.288729362427382,
+              "tau_hat_over_analytic_window": 0.902153851378083,
+              "near_acf_maxdev_1tau": 0.030625535152773442,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": null,
+                "mid(fc-10fc)": 0.9599976552637107,
+                "hi(>10fc,<10Hz)": 0.9997687917698119
+              },
+              "psd_integral_over_sigma2": 0.9170145909295792,
+              "hf_slope": -1.9965641367934759,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 44.17845798665799,
+                "tau_int_analytic_s": 22.089228993328994,
+                "target_sigma": 1.0764201620471683,
+                "rms": 1.011854045115929,
+                "rms_over_sigma": 0.9400177373039488,
+                "expected_rms_rel_err": 0.07431226527739475,
+                "rms_err_in_expected_sd": -0.8071650416273529,
+                "tau_hat_3tau_s": 16.467271480711545,
+                "tau_analytic_3tau_window_s": 24.288729362427382,
+                "tau_hat_over_analytic_window": 0.6779799484358794,
+                "near_acf_maxdev_1tau": 0.15447283402696038,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": null,
+                  "mid(fc-10fc)": 1.0819381882078383,
+                  "hi(>10fc,<10Hz)": 0.9711592105668163
+                },
+                "psd_integral_over_sigma2": 0.8951877222480392,
+                "hf_slope": -1.999223450111486
+              }
+            },
+            "w": {
+              "tau_s": 12.149660926600927,
+              "tau_int_analytic_s": 6.074830463300463,
+              "target_sigma": 0.7000000000000001,
+              "rms": 0.6935047690401791,
+              "rms_over_sigma": 0.9907210986288272,
+              "expected_rms_rel_err": 0.038970618862648174,
+              "rms_err_in_expected_sd": -0.23809992353152717,
+              "tau_hat_3tau_s": 7.036808496764875,
+              "tau_analytic_3tau_window_s": 6.679751091977638,
+              "tau_hat_over_analytic_window": 1.053453699078108,
+              "near_acf_maxdev_1tau": 0.019466020692744557,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.063660023481451,
+                "mid(fc-10fc)": 0.9531561166956762,
+                "hi(>10fc,<10Hz)": 0.9910601174461509
+              },
+              "psd_integral_over_sigma2": 0.9672206109542018,
+              "hf_slope": -1.9952895255021041,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 12.149660926600927,
+                "tau_int_analytic_s": 6.074830463300463,
+                "target_sigma": 0.7000000000000001,
+                "rms": 0.7148296527598866,
+                "rms_over_sigma": 1.0211852182284094,
+                "expected_rms_rel_err": 0.038970618862648174,
+                "rms_err_in_expected_sd": 0.5436202669266451,
+                "tau_hat_3tau_s": 6.198265764905117,
+                "tau_analytic_3tau_window_s": 6.679751091977638,
+                "tau_hat_over_analytic_window": 0.9279186723513121,
+                "near_acf_maxdev_1tau": 0.03228840260214505,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.0090086503682656,
+                  "mid(fc-10fc)": 1.132846332608455,
+                  "hi(>10fc,<10Hz)": 1.0150643870113387
+                },
+                "psd_integral_over_sigma2": 1.0394667297300872,
+                "hf_slope": -1.9863533412312158
+              }
+            }
+          }
+        },
+        "9": {
+          "n": 999999,
+          "dt": 0.003999999999990678,
+          "T_s": 3999.992,
+          "V_mean": 5.0,
+          "V_min": 5.0,
+          "V_max": 5.0,
+          "frac_V_above_floor_1pct": 0.0,
+          "h_ft_mean": 207.93956626056624,
+          "h_ft_range": [
+            196.792,
+            228.102
+          ],
+          "L_m": {
+            "u": 224.710922992923,
+            "v": 224.710922992923,
+            "w": 63.37997968267968
+          },
+          "sigma_target": {
+            "u": 1.06757730480988,
+            "v": 1.06757730480988,
+            "w": 0.7000000000000001
+          },
+          "axes": {
+            "u": {
+              "tau_s": 44.9421845985846,
+              "tau_int_analytic_s": 44.9421845985846,
+              "target_sigma": 1.06757730480988,
+              "rms": 1.190040987740637,
+              "rms_over_sigma": 1.1147117706408773,
+              "expected_rms_rel_err": 0.10599791217391842,
+              "rms_err_in_expected_sd": 1.0822078311567256,
+              "tau_hat_3tau_s": 49.97782124539647,
+              "tau_analytic_3tau_window_s": 42.70471701065999,
+              "tau_hat_over_analytic_window": 1.1703114958687342,
+              "near_acf_maxdev_1tau": 0.11064554313361008,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": null,
+                "mid(fc-10fc)": 1.1843467985103717,
+                "hi(>10fc,<10Hz)": 1.0628365567591018
+              },
+              "psd_integral_over_sigma2": 1.116625585358086,
+              "hf_slope": -1.9937717110776552,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 44.9421845985846,
+                "tau_int_analytic_s": 44.9421845985846,
+                "target_sigma": 1.06757730480988,
+                "rms": 1.0889376066086232,
+                "rms_over_sigma": 1.0200082014693512,
+                "expected_rms_rel_err": 0.10599791217391842,
+                "rms_err_in_expected_sd": 0.18876033554814106,
+                "tau_hat_3tau_s": 36.66176456298911,
+                "tau_analytic_3tau_window_s": 42.70471701065999,
+                "tau_hat_over_analytic_window": 0.8584944973136708,
+                "near_acf_maxdev_1tau": 0.037051550886289863,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": null,
+                  "mid(fc-10fc)": 1.1794660555770418,
+                  "hi(>10fc,<10Hz)": 1.0868546752514783
+                },
+                "psd_integral_over_sigma2": 1.0562207986543437,
+                "hf_slope": -1.98986559976984
+              }
+            },
+            "v": {
+              "tau_s": 44.9421845985846,
+              "tau_int_analytic_s": 22.4710922992923,
+              "target_sigma": 1.06757730480988,
+              "rms": 0.9103577451722529,
+              "rms_over_sigma": 0.8527323886248915,
+              "expected_rms_rel_err": 0.07495184248979381,
+              "rms_err_in_expected_sd": -1.9648297691302505,
+              "tau_hat_3tau_s": 26.57290513402461,
+              "tau_analytic_3tau_window_s": 24.70859595987783,
+              "tau_hat_over_analytic_window": 1.0754518458747746,
+              "near_acf_maxdev_1tau": 0.1385493905194763,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": null,
+                "mid(fc-10fc)": 0.8300679170302256,
+                "hi(>10fc,<10Hz)": 0.9617668702928905
+              },
+              "psd_integral_over_sigma2": 0.7531535632357326,
+              "hf_slope": -1.9921726256728802,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 44.9421845985846,
+                "tau_int_analytic_s": 22.4710922992923,
+                "target_sigma": 1.06757730480988,
+                "rms": 1.0786087114597973,
+                "rms_over_sigma": 1.0103331221076135,
+                "expected_rms_rel_err": 0.07495184248979381,
+                "rms_err_in_expected_sd": 0.13786348359642478,
+                "tau_hat_3tau_s": 22.682208795159887,
+                "tau_analytic_3tau_window_s": 24.70859595987783,
+                "tau_hat_over_analytic_window": 0.9179885749878941,
+                "near_acf_maxdev_1tau": 0.041066870189888804,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": null,
+                  "mid(fc-10fc)": 1.0716057740542255,
+                  "hi(>10fc,<10Hz)": 1.0323055302039128
+                },
+                "psd_integral_over_sigma2": 1.0642262075030102,
+                "hf_slope": -1.9960571814371968
+              }
+            },
+            "w": {
+              "tau_s": 12.675995936535937,
+              "tau_int_analytic_s": 6.337997968267969,
+              "target_sigma": 0.7000000000000001,
+              "rms": 0.7201972542298706,
+              "rms_over_sigma": 1.0288532203283864,
+              "expected_rms_rel_err": 0.03980579199779551,
+              "rms_err_in_expected_sd": 0.7248497989936832,
+              "tau_hat_3tau_s": 7.304509605568632,
+              "tau_analytic_3tau_window_s": 6.969098498909842,
+              "tau_hat_over_analytic_window": 1.0481283349218349,
+              "near_acf_maxdev_1tau": 0.03149573529770788,
+              "welch_segments": 14,
+              "psd_ratio_bands": {
+                "lo(<fc)": 1.1461871227322902,
+                "mid(fc-10fc)": 1.03926792619709,
+                "hi(>10fc,<10Hz)": 0.9761472033920142
+              },
+              "psd_integral_over_sigma2": 1.0568168100300481,
+              "hf_slope": -1.9908328892110916,
+              "PSD_note": "analytic PSD NOT rescaled; ratios = Welch/analytic band integrals",
+              "mirror": {
+                "tau_s": 12.675995936535937,
+                "tau_int_analytic_s": 6.337997968267969,
+                "target_sigma": 0.7000000000000001,
+                "rms": 0.7179879344664135,
+                "rms_over_sigma": 1.0256970492377335,
+                "expected_rms_rel_err": 0.03980579199779551,
+                "rms_err_in_expected_sd": 0.6455605565932881,
+                "tau_hat_3tau_s": 8.322227475940952,
+                "tau_analytic_3tau_window_s": 6.969098498909842,
+                "tau_hat_over_analytic_window": 1.1941612645082829,
+                "near_acf_maxdev_1tau": 0.04962428040100969,
+                "welch_segments": 14,
+                "psd_ratio_bands": {
+                  "lo(<fc)": 1.0105427484232883,
+                  "mid(fc-10fc)": 0.9970152876148319,
+                  "hi(>10fc,<10Hz)": 0.9849943566156519
+                },
+                "psd_integral_over_sigma2": 1.042572997633058,
+                "hf_slope": -1.9953126101295167
+              }
+            }
+          }
+        }
+      },
+      "cross": {
+        "link_pairs": {
+          "5-7:u": 0.010919901907105027,
+          "5-7:v": -0.061523183662834074,
+          "5-7:w": 0.053011754634493244,
+          "5-9:u": -0.003791791531537822,
+          "5-9:v": -0.10125179523882576,
+          "5-9:w": -0.02757903513784703,
+          "7-9:u": -0.1539842502810346,
+          "7-9:v": 0.032010489006446825,
+          "7-9:w": -0.06121335198670762
+        },
+        "axis_pairs_within_link": {
+          "5:uv": 0.09267401680182012,
+          "5:uw": 0.016757024367595703,
+          "5:vw": 0.023179730118206017,
+          "7:uv": -0.03139224643756389,
+          "7:uw": 0.05762510164158907,
+          "7:vw": -0.11671029193661409,
+          "9:uv": 0.197311847572758,
+          "9:uw": -0.030299242393689373,
+          "9:vw": 0.03355906236998343
+        },
+        "null_sd_conservative": 0.14853306156499338,
+        "max_abs_link_r": 0.1539842502810346,
+        "max_abs_axis_r": 0.197311847572758
+      }
+    }
+  },
+  "inter_run_correlation": {
+    "fixed_s1~fixed_s2:ent5:u": -0.06201337294752467,
+    "fixed_s1~fixed_s2:ent5:v": -0.006386708677835617,
+    "fixed_s1~fixed_s2:ent5:w": 0.037261882157481836,
+    "fixed_s1~fixed_s2:ent7:u": 0.11164269330231147,
+    "fixed_s1~fixed_s2:ent7:v": -0.03838025111120991,
+    "fixed_s1~fixed_s2:ent7:w": 0.033721233966569786,
+    "fixed_s1~fixed_s2:ent9:u": -0.005392264251946949,
+    "fixed_s1~fixed_s2:ent9:v": 0.05673592769479266,
+    "fixed_s1~fixed_s2:ent9:w": 0.0041195472703708345,
+    "fixed_s1~alt10m:ent5:u": -0.10028280605290964,
+    "fixed_s1~alt10m:ent5:v": -0.017995576595872448,
+    "fixed_s1~alt10m:ent5:w": -0.032618346500489705,
+    "fixed_s1~alt10m:ent7:u": 0.02286239156755106,
+    "fixed_s1~alt10m:ent7:v": 0.0684165000738134,
+    "fixed_s1~alt10m:ent7:w": 0.019730103970853622,
+    "fixed_s1~alt10m:ent9:u": -0.058634539682232915,
+    "fixed_s1~alt10m:ent9:v": 0.11539073241100815,
+    "fixed_s1~alt10m:ent9:w": -0.043812981534567114,
+    "fixed_s1~alt60m:ent5:u": 0.07863950673487137,
+    "fixed_s1~alt60m:ent5:v": -0.030162498024629482,
+    "fixed_s1~alt60m:ent5:w": 0.022106040658929918,
+    "fixed_s1~alt60m:ent7:u": 0.03970706044473409,
+    "fixed_s1~alt60m:ent7:v": -0.024084486688857733,
+    "fixed_s1~alt60m:ent7:w": 0.015923686376952913,
+    "fixed_s1~alt60m:ent9:u": -0.12598407744079057,
+    "fixed_s1~alt60m:ent9:v": -0.034726616246244194,
+    "fixed_s1~alt60m:ent9:w": 0.1011211914305104,
+    "fixed_s2~alt10m:ent5:u": 0.06585362661776704,
+    "fixed_s2~alt10m:ent5:v": 0.02919219542727749,
+    "fixed_s2~alt10m:ent5:w": -0.0006656629617736333,
+    "fixed_s2~alt10m:ent7:u": 0.008059629443681538,
+    "fixed_s2~alt10m:ent7:v": 0.014074222881061672,
+    "fixed_s2~alt10m:ent7:w": 0.019081796404896326,
+    "fixed_s2~alt10m:ent9:u": -0.008664874194556063,
+    "fixed_s2~alt10m:ent9:v": 0.008826085611894437,
+    "fixed_s2~alt10m:ent9:w": 0.015473541546259803,
+    "fixed_s2~alt60m:ent5:u": 0.16328143772287387,
+    "fixed_s2~alt60m:ent5:v": -0.06030624615973473,
+    "fixed_s2~alt60m:ent5:w": 0.02350847398638345,
+    "fixed_s2~alt60m:ent7:u": -0.08784731296824093,
+    "fixed_s2~alt60m:ent7:v": -0.0324519157147186,
+    "fixed_s2~alt60m:ent7:w": -0.019981954325661765,
+    "fixed_s2~alt60m:ent9:u": 0.0570719488953015,
+    "fixed_s2~alt60m:ent9:v": -0.0321866937255496,
+    "fixed_s2~alt60m:ent9:w": -0.005002761956221376,
+    "alt10m~alt60m:ent5:u": 0.04028275328480575,
+    "alt10m~alt60m:ent5:v": -0.1214552571875828,
+    "alt10m~alt60m:ent5:w": -0.039835143068604306,
+    "alt10m~alt60m:ent7:u": 0.012559945481935562,
+    "alt10m~alt60m:ent7:v": 0.0484662334859252,
+    "alt10m~alt60m:ent7:w": -0.01095973758808817,
+    "alt10m~alt60m:ent9:u": 0.04786553209927088,
+    "alt10m~alt60m:ent9:v": -0.0316582255877065,
+    "alt10m~alt60m:ent9:w": 0.028499008501851924
+  }
+}

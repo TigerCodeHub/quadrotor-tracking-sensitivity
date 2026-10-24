@@ -1,0 +1,29 @@
+====================================================================================================
+DIMENSIONLESS ANALYSIS -- v2 segment, n=81894 configs, response=log(cross_track_rmse)
+====================================================================================================
+   V_cmd = 4.940 m/s (median of calmest 5%: 1000 m / 202.4 s). rho=1.225, tau_gust=2.0 s
+
+1. COLLAPSE: how much per-airframe structure survives, with NO airframe dummies?
+   model                           R2  resid_sd   per-AF sd F(dummies)
+   dimensional                 0.7746    0.5206      0.0353     106.1
+        per-airframe mean residual: mrs_f330=+0.055, mrs_f450=-0.027, mrs_m690=+0.029, mrs_t650=-0.023, px4_x500=-0.034
+        R2 with dummies re-added: 0.7758 (gain +0.0012)
+   dimensionless               0.7879    0.5051      0.0322     262.6
+        per-airframe mean residual: mrs_f330=+0.003, mrs_f450=+0.052, mrs_m690=-0.019, mrs_t650=-0.045, px4_x500=+0.010
+        R2 with dummies re-added: 0.7905 (gain +0.0027)
+
+2. LOG-LOG EXPONENTS vs physical prediction
+   Fit log(cross_track_rmse) = c + p*log(x) + airframe dummies (HC3 robust SE, 95% CI), compare p to theory.
+   sigma_v (turb RMS)     n=76446  measured p=+1.2099 (HC3 se 0.0031, 95% CI [+1.2037, +1.2160])  predicted +2.0  -> 60% of theory
+        deviation from theory: t=-251.9 (p=0) -- gust force ~ rho A sigma^2, deviation follows forcing
+   mean wind U            n=79164  measured p=+0.3144 (HC3 se 0.0047, 95% CI [+0.3053, +0.3236])  predicted +2.0  -> 16% of theory
+        deviation from theory: t=-360.5 (p=0) -- same drag law for the steady component
+   mass (within AF)       n=81894  measured p=-0.1100 (HC3 se 0.0503, 95% CI [-0.2086, -0.0113])  predicted -1.0  -> 11.0% of theory
+        deviation from theory: t=+17.7 (p=0)
+        => the control loop rejects ~89% of the open-loop mass effect
+
+====================================================================================================
+Reading guide: a collapse is credible only if the dimensionless fit leaves LITTLE
+per-airframe structure (small per-AF sd, small R2 gain when dummies are re-added).
+A large F for the dummies means the groups are still missing airframe physics.
+====================================================================================================

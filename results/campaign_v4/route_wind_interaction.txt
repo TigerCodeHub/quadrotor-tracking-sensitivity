@@ -1,0 +1,152 @@
+metric = cross_track_rmse
+==========================================================================================
+v4 rows used: 80446; plans=9, archetypes=3, chunks=['c1', 'c2', 'c3', 'c4']
+
+(1) Wind coefficient under alternative route controls (log-PTE, HC3)
+  six factors + airframe FE          wind +0.4295 (se 0.0016) turb +0.8641 (se 0.0034) R2=0.678
+  + plan FE (9)                      wind +0.4286 (se 0.0016) turb +0.8652 (se 0.0033) R2=0.703
+  + plan FE + chunk FE               wind +0.4286 (se 0.0015) turb +0.8493 (se 0.0032) R2=0.706
+  full coefficients, plan+chunk FE model:
+    turbulence_rms         0.8493  se 0.0032
+    mean_wind              0.4286  se 0.0015
+    log_payload           -0.0822  se 0.0325
+    thrust_to_weight      -0.1188  se 0.0059
+    inertia_scale          0.0001  se 0.0170
+    abs_com_y_frac         1.2290  se 0.1714
+    plan[dlv_a_v1]        -0.0329  se 0.0107
+    plan[dlv_a_v2]        -0.0170  se 0.0107
+    plan[dlv_b_v0]         0.4211  se 0.0110
+    plan[dlv_b_v1]         0.4331  se 0.0109
+    plan[dlv_b_v2]         0.4839  se 0.0110
+    plan[dlv_c_v0]         0.3544  se 0.0104
+    plan[dlv_c_v1]         0.3833  se 0.0104
+    plan[dlv_c_v2]         0.4009  se 0.0107
+    chunk[c2]             -0.1346  se 0.0069
+    chunk[c3]             -0.0044  se 0.0076
+    chunk[c4]             -0.1304  se 0.0070
+
+==========================================================================================
+(2) wind x plan and turbulence x plan (centered; + other 4 factors, airframe FE, chunk FE, plan FE)
+  n=80446 k=38 R2=0.708
+  wind x plan: per-route slope (HC3 95% CI)
+    dlv_a_v0     0.4338  se 0.0048  [+0.4243, +0.4432]
+    dlv_a_v1     0.4087  se 0.0046  [+0.3997, +0.4178]
+    dlv_a_v2     0.4049  se 0.0047  [+0.3958, +0.4140]
+    dlv_b_v0     0.4342  se 0.0048  [+0.4248, +0.4435]
+    dlv_b_v1     0.4249  se 0.0046  [+0.4158, +0.4340]
+    dlv_b_v2     0.4074  se 0.0049  [+0.3978, +0.4169]
+    dlv_c_v0     0.4497  se 0.0044  [+0.4411, +0.4584]
+    dlv_c_v1     0.4517  se 0.0043  [+0.4433, +0.4601]
+    dlv_c_v2     0.4438  se 0.0045  [+0.4350, +0.4526]
+    range 0.4049..0.4517; omnibus equal-slopes Wald chi2(8)=129.64 p=3.37e-24; F=16.20 p=3.53e-24
+  turb x plan: per-route slope (HC3 95% CI)
+    dlv_a_v0     0.7393  se 0.0102  [+0.7193, +0.7593]
+    dlv_a_v1     0.8122  se 0.0099  [+0.7929, +0.8316]
+    dlv_a_v2     0.7925  se 0.0097  [+0.7734, +0.8116]
+    dlv_b_v0     0.9470  se 0.0100  [+0.9273, +0.9667]
+    dlv_b_v1     0.9215  se 0.0096  [+0.9026, +0.9404]
+    dlv_b_v2     0.8972  se 0.0098  [+0.8779, +0.9165]
+    dlv_c_v0     0.8451  se 0.0092  [+0.8270, +0.8631]
+    dlv_c_v1     0.8488  se 0.0090  [+0.8311, +0.8665]
+    dlv_c_v2     0.8448  se 0.0096  [+0.8259, +0.8637]
+    range 0.7393..0.9470; omnibus equal-slopes Wald chi2(8)=339.46 p=1.61e-68; F=42.43 p=2.27e-68
+  -- wind-only interaction (turbulence entered as a common slope):
+  wind x plan: per-route slope (HC3 95% CI)
+    dlv_a_v0     0.4339  se 0.0048  [+0.4245, +0.4433]
+    dlv_a_v1     0.4087  se 0.0046  [+0.3997, +0.4177]
+    dlv_a_v2     0.4046  se 0.0047  [+0.3955, +0.4138]
+    dlv_b_v0     0.4341  se 0.0048  [+0.4247, +0.4436]
+    dlv_b_v1     0.4245  se 0.0047  [+0.4154, +0.4337]
+    dlv_b_v2     0.4070  se 0.0049  [+0.3975, +0.4165]
+    dlv_c_v0     0.4498  se 0.0044  [+0.4412, +0.4584]
+    dlv_c_v1     0.4517  se 0.0043  [+0.4434, +0.4601]
+    dlv_c_v2     0.4438  se 0.0045  [+0.4350, +0.4526]
+    range 0.4046..0.4517; omnibus equal-slopes Wald chi2(8)=132.03 p=1.07e-24; F=16.50 p=1.13e-24
+  R2 no-interaction 0.7056 -> with wind x plan 0.7061
+
+==========================================================================================
+(2) wind x archetype and turbulence x archetype (centered; + other 4 factors, airframe FE, chunk FE, archetype FE)
+  n=80446 k=20 R2=0.707
+  wind x archetype: per-route slope (HC3 95% CI)
+    dlv_a        0.4158  se 0.0027  [+0.4105, +0.4211]
+    dlv_b        0.4220  se 0.0027  [+0.4166, +0.4274]
+    dlv_c        0.4484  se 0.0025  [+0.4434, +0.4533]
+    range 0.4158..0.4484; omnibus equal-slopes Wald chi2(2)=87.94 p=8.01e-20; F=43.97 p=8.21e-20
+  turb x archetype: per-route slope (HC3 95% CI)
+    dlv_a        0.7811  se 0.0057  [+0.7698, +0.7924]
+    dlv_b        0.9217  se 0.0057  [+0.9105, +0.9328]
+    dlv_c        0.8466  se 0.0054  [+0.8361, +0.8572]
+    range 0.7811..0.9217; omnibus equal-slopes Wald chi2(2)=302.72 p=1.84e-66; F=151.36 p=2.44e-66
+  -- wind-only interaction (turbulence entered as a common slope):
+  wind x archetype: per-route slope (HC3 95% CI)
+    dlv_a        0.4157  se 0.0027  [+0.4104, +0.4210]
+    dlv_b        0.4217  se 0.0028  [+0.4163, +0.4272]
+    dlv_c        0.4484  se 0.0025  [+0.4434, +0.4533]
+    range 0.4157..0.4484; omnibus equal-slopes Wald chi2(2)=89.84 p=3.1e-20; F=44.92 p=3.18e-20
+  R2 no-interaction 0.7053 -> with wind x archetype 0.7057
+
+==========================================================================================
+(3) Is route assignment correlated with predictors?  eta^2 (share of predictor variance explained by label), F-test p
+  by plan:
+    turbulence_rms     eta2=0.00021  F=2.15  p=0.0284
+    mean_wind          eta2=0.00012  F=1.19  p=0.299
+    log_payload        eta2=0.00004  F=0.36  p=0.943
+    thrust_to_weight   eta2=0.00010  F=0.98  p=0.446
+    inertia_scale      eta2=0.00009  F=0.95  p=0.474
+    abs_com_y_frac     eta2=0.00009  F=0.87  p=0.544
+    wind_dir_deg       eta2=0.00010  F=1.01  p=0.422
+  by archetype:
+    turbulence_rms     eta2=0.00005  F=2.05  p=0.128
+    mean_wind          eta2=0.00007  F=3.00  p=0.05
+    log_payload        eta2=0.00000  F=0.11  p=0.893
+    thrust_to_weight   eta2=0.00003  F=1.10  p=0.332
+    inertia_scale      eta2=0.00000  F=0.15  p=0.859
+    abs_com_y_frac     eta2=0.00002  F=0.61  p=0.544
+    wind_dir_deg       eta2=0.00001  F=0.43  p=0.653
+  by chunk:
+    turbulence_rms     eta2=0.04401  F=1234.34  p=0
+    mean_wind          eta2=0.00001  F=0.24  p=0.866
+    log_payload        eta2=0.02355  F=646.60  p=0
+    thrust_to_weight   eta2=0.00001  F=0.13  p=0.94
+    inertia_scale      eta2=0.00000  F=0.01  p=1
+    abs_com_y_frac     eta2=0.00000  F=0.00  p=1
+    wind_dir_deg       eta2=0.00001  F=0.14  p=0.936
+  by airframe:
+    turbulence_rms     eta2=0.00005  F=0.98  p=0.418
+    mean_wind          eta2=0.00002  F=0.50  p=0.736
+    log_payload        eta2=0.00001  F=0.28  p=0.889
+    thrust_to_weight   eta2=0.00000  F=0.05  p=0.995
+    inertia_scale      eta2=0.00000  F=0.01  p=1
+    abs_com_y_frac     eta2=0.00000  F=0.07  p=0.991
+    wind_dir_deg       eta2=0.00000  F=0.01  p=1
+  plan counts: {'dlv_a_v0': 8965, 'dlv_a_v1': 8947, 'dlv_a_v2': 8957, 'dlv_b_v0': 8895, 'dlv_b_v1': 8922, 'dlv_b_v2': 8948, 'dlv_c_v0': 8928, 'dlv_c_v1': 8950, 'dlv_c_v2': 8934}
+
+==========================================================================================
+(4) Paired c1: 19801 pairs (v4 route minus the matched straight control (v3-D Dryden '_dw' for c1; v2 for other chunks), same config + wind seed)
+  mean delta=1.4980; corr(delta, wind)=0.384
+
+  delta ~ wind + turb + archetype + wind x archetype + airframe FE   [wind/turb centered]
+    no-interaction: wind coef on delta +0.2261 (se 0.0041); R2=0.202
+    interaction model n=19801 R2=0.203
+  wind x archetype: per-route slope (HC3 95% CI)
+    dlv_a        0.2039  se 0.0070  [+0.1901, +0.2176]
+    dlv_b        0.2315  se 0.0073  [+0.2173, +0.2458]
+    dlv_c        0.2435  se 0.0072  [+0.2295, +0.2576]
+    range 0.2039..0.2435; omnibus equal-slopes Wald chi2(2)=16.55 p=0.000254; F=8.28 p=0.000255
+    (slope = d delta/d wind per route = growth of route penalty with wind, log units per m/s)
+
+  delta ~ wind + turb + plan + wind x plan + airframe FE   [wind/turb centered]
+    no-interaction: wind coef on delta +0.2263 (se 0.0041); R2=0.202
+    interaction model n=19801 R2=0.203
+  wind x plan: per-route slope (HC3 95% CI)
+    dlv_a_v0     0.2123  se 0.0127  [+0.1874, +0.2372]
+    dlv_a_v1     0.1975  se 0.0117  [+0.1746, +0.2204]
+    dlv_a_v2     0.2013  se 0.0119  [+0.1779, +0.2247]
+    dlv_b_v0     0.2474  se 0.0125  [+0.2229, +0.2720]
+    dlv_b_v1     0.2364  se 0.0123  [+0.2124, +0.2605]
+    dlv_b_v2     0.2129  se 0.0129  [+0.1876, +0.2382]
+    dlv_c_v0     0.2516  se 0.0128  [+0.2266, +0.2767]
+    dlv_c_v1     0.2414  se 0.0120  [+0.2178, +0.2650]
+    dlv_c_v2     0.2376  se 0.0125  [+0.2131, +0.2620]
+    range 0.1975..0.2516; omnibus equal-slopes Wald chi2(8)=22.59 p=0.00393; F=2.82 p=0.00395
+    (slope = d delta/d wind per route = growth of route penalty with wind, log units per m/s)

@@ -1,0 +1,5 @@
+v3-D rows 19890 paired with a v2 control 19890 controls also in canonical v2 set: 19890
+v2 full set (white)       : n=81894 R2=0.775 | turb +1.054 (t +465) wind +0.166 (t +145) log mass -0.263 (t -69) T/W -0.011 (t -2.7) inertia -0.007 (t -0.5)
+v2 paired subset (white)  : n=19890 R2=0.795 | turb +1.066 (t +256) wind +0.181 (t +74) log mass -0.264 (t -32) T/W -0.005 (t -0.6) inertia +0.024 (t +0.9)
+v3-D Dryden (paired)     : n=19890 R2=0.546 | turb +0.903 (t +135) wind +0.255 (t +61) log mass -0.144 (t -11) T/W -0.092 (t -6.1) inertia -0.035 (t -0.8)
+mean paired change log(SPE) Dryden - white = -0.8485 (SE 0.0057, t -149); ratio exp = 0.428; median d = -0.9488

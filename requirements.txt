@@ -1,0 +1,12 @@
+# Analysis environment (Python 3.12) that produced every number in the paper.
+numpy==2.3.5
+scipy==1.16.3
+pandas==2.3.3
+matplotlib==3.10.8
+Jinja2==3.1.6
+MarkupSafe==2.1.5
+SALib==1.6.0
+
+# Data generation / SITL runner only (not needed to reproduce the analysis).
+mavsdk>=2.0
+pyulog>=1.1

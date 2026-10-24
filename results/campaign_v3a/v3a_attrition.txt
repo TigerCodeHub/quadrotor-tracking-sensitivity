@@ -1,0 +1,10 @@
+designed 20000  usable 18225  missing 1775
+   mrs_f330   missing    91 / 4000  (2.3%)
+   mrs_f450   missing   151 / 4000  (3.8%)
+   mrs_m690   missing   117 / 4000  (2.9%)
+   mrs_t650   missing   152 / 4000  (3.8%)
+   px4_x500   missing  1264 / 4000  (31.6%)
+X500 missing by payload fraction:
+   0.0-0.1: 630 / 1473  (43%)
+   0.1-0.2: 332 / 1248  (27%)
+   0.2-0.3: 302 / 1279  (24%)

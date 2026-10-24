@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="dryden_test">
+    <!-- Zero gravity + a heavy probe => body barely moves, so airspeed V is held
+         at min_airspeed and the length scales are fixed => stationary gust, which
+         makes the RMS/PSD validation clean (constant tau = L/V). -->
+    <gravity>0 0 0</gravity>
+    <physics name="fast" type="ignored">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>0</real_time_factor>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+
+    <plugin filename="DrydenWind" name="tdr::DrydenWind">
+      <mean_wind>0 0 0</mean_wind>
+      <sigma>2.0 2.0 2.0</sigma>
+      <length_scale>50 50 50</length_scale>
+      <min_airspeed>5.0</min_airspeed>
+      <force_scaling_factor>1</force_scaling_factor>
+      <seed>12345</seed>
+      <log_file>/tmp/dryden_gust.csv</log_file>
+    </plugin>
+
+    <model name="probe">
+      <pose>0 0 30 0 0 0</pose>
+      <link name="body">
+        <enable_wind>true</enable_wind>
+        <inertial>
+          <mass>1000.0</mass>
+          <inertia>
+            <ixx>100</ixx><iyy>100</iyy><izz>100</izz>
+            <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="c">
+          <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+        </collision>
+        <visual name="v">
+          <geometry><box><size>0.2 0.2 0.2</size></box></geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

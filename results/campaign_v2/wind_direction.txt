@@ -1,0 +1,100 @@
+   replicates used: 1   [auto (>=99% of 81914 rows)]
+   excluded (incomplete): {'2': 8190}
+   collapsed 81894 runs -> 81894 configs (config-level SEs; run-level would be ~1.00x too small)
+==============================================================================
+WIND DIRECTION ANALYSIS -- v2 segment, n=81894 configs
+==============================================================================
+
+0. BALANCE (direction is its own Sobol dimension, so this should be ~even)
+   tailwind(0)        n=20468   geometric-mean SOB2=0.87619  mean log=-0.1322
+   cross-left(90)     n=20482   geometric-mean SOB2=2.05953  mean log=+0.7225
+   headwind(180)      n=20465   geometric-mean SOB2=1.15670  mean log=+0.1456
+   cross-right(270)   n=20479   geometric-mean SOB2=2.03985  mean log=+0.7129
+
+1. POOLED MAIN EFFECTS (reference -- direction not in model)  R2=0.7758
+     intercept                  -1.44312  se=0.01993  t=  -72.41  p=0           ***
+     mean_wind                  +0.16649  se=0.00105  t= +158.89  p=0           ***
+     turb_rms                   +1.05382  se=0.00210  t= +502.86  p=0           ***
+     log_mass(within)           -0.10715  se=0.02400  t=   -4.46  p=8.03e-06    ***
+     thrust_to_weight           -0.01118  se=0.00419  t=   -2.67  p=0.00766     **
+     inertia_scale              -0.00656  se=0.01257  t=   -0.52  p=0.602          
+     abs_com_y                  +0.50310  se=0.23483  t=   +2.14  p=0.0322      *
+     AF[mrs_f450]               -0.11324  se=0.00744  t=  -15.23  p=0           ***
+     AF[mrs_m690]               -0.22266  se=0.03032  t=   -7.34  p=2.07e-13    ***
+     AF[mrs_t650]               -0.22973  se=0.02363  t=   -9.72  p=0           ***
+     AF[px4_x500]               -0.15131  se=0.01108  t=  -13.65  p=0           ***
+
+2. + DIRECTION LEVEL SHIFTS (base = tailwind(0))  R2=0.8891
+     intercept                  -1.93802  se=0.01419  t= -136.54  p=0           ***
+     mean_wind                  +0.16647  se=0.00074  t= +225.85  p=0           ***
+     turb_rms                   +1.05393  se=0.00147  t= +714.92  p=0           ***
+     log_mass(within)           -0.10819  se=0.01688  t=   -6.41  p=1.47e-10    ***
+     thrust_to_weight           -0.01117  se=0.00295  t=   -3.79  p=0.000152    ***
+     inertia_scale              -0.00606  se=0.00884  t=   -0.69  p=0.493          
+     abs_com_y                  +0.51883  se=0.16519  t=   +3.14  p=0.00168     **
+     AF[mrs_f450]               -0.11306  se=0.00523  t=  -21.61  p=0           ***
+     AF[mrs_m690]               -0.22185  se=0.02133  t=  -10.40  p=0           ***
+     AF[mrs_t650]               -0.22886  se=0.01662  t=  -13.77  p=0           ***
+     AF[px4_x500]               -0.15097  se=0.00780  t=  -19.37  p=0           ***
+     DIR[cross-left(90)]        +0.85563  se=0.00361  t= +237.00  p=0           ***
+     DIR[headwind(180)]         +0.27764  se=0.00361  t=  +76.89  p=0           ***
+     DIR[cross-right(270)]      +0.84497  se=0.00361  t= +234.04  p=0           ***
+   JOINT F-TEST direction level shifts: F(3,81880)=27864.39  p=0
+
+3. + DIRECTION-SPECIFIC WIND/TURB SLOPES (base slope = tailwind(0))  R2=0.9124
+     intercept                  -1.32744  se=0.01349  t=  -98.40  p=0           ***
+     mean_wind                  +0.05236  se=0.00131  t=  +39.97  p=0           ***
+     turb_rms                   +0.87501  se=0.00262  t= +333.95  p=0           ***
+     log_mass(within)           -0.10747  se=0.01500  t=   -7.17  p=7.77e-13    ***
+     thrust_to_weight           -0.01167  se=0.00262  t=   -4.46  p=8.33e-06    ***
+     inertia_scale              -0.00501  se=0.00786  t=   -0.64  p=0.523          
+     abs_com_y                  +0.51043  se=0.14676  t=   +3.48  p=0.000505    ***
+     AF[mrs_f450]               -0.11314  se=0.00465  t=  -24.34  p=0           ***
+     AF[mrs_m690]               -0.22249  se=0.01895  t=  -11.74  p=0           ***
+     AF[mrs_t650]               -0.22937  se=0.01477  t=  -15.53  p=0           ***
+     AF[px4_x500]               -0.15120  se=0.00693  t=  -21.83  p=0           ***
+     DIR[cross-left(90)]        +0.05826  se=0.00848  t=   +6.87  p=6.33e-12    ***
+     DIR[headwind(180)]         -0.50960  se=0.00848  t=  -60.07  p=0           ***
+     DIR[cross-right(270)]      -0.01646  se=0.00848  t=   -1.94  p=0.0522         
+     wind x cross-left(90)      +0.12347  se=0.00185  t=  +66.67  p=0           ***
+     wind x headwind(180)       +0.20280  se=0.00185  t= +109.44  p=0           ***
+     wind x cross-right(270)    +0.13070  se=0.00185  t=  +70.57  p=0           ***
+     turb x cross-left(90)      +0.28461  se=0.00370  t=  +76.83  p=0           ***
+     turb x headwind(180)       +0.11940  se=0.00371  t=  +32.22  p=0           ***
+     turb x cross-right(270)    +0.31278  se=0.00370  t=  +84.43  p=0           ***
+   JOINT F-TEST direction-specific slopes (over level shifts): F(6,81874)=3643.66  p=0
+   JOINT F-TEST ALL direction terms (over pooled model): F(9,81874)=14196.48  p=0
+
+4. STRATIFIED -- an independent fit per direction (assumption-free version of 3)
+   direction          n       mean_wind                turb_rms                 R2
+   tailwind(0)        20468   +0.05238 (se 0.00124)     +0.87492 (se 0.00248)     0.8609
+   cross-left(90)     20482   +0.17583 (se 0.00120)     +1.15962 (se 0.00241)     0.9268
+   headwind(180)      20465   +0.25514 (se 0.00145)     +0.99450 (se 0.00291)     0.8812
+   cross-right(270)   20479   +0.18307 (se 0.00126)     +1.18778 (se 0.00253)     0.9232
+
+5. MECHANISM TEST -- |com_y| x crosswind
+   com_y is a BODY-frame lateral offset; flying due east means the 90/270
+   crosswinds push along that same body axis, so this interaction has a
+   physical mechanism (unlike the withdrawn wind x log(mass) term).
+
+   model  R2=0.8812
+     intercept                  -1.80632  se=0.01481  t= -121.95  p=0           ***
+     mean_wind                  +0.16347  se=0.00095  t= +172.35  p=0           ***
+     turb_rms                   +1.05398  se=0.00153  t= +690.79  p=0           ***
+     log_mass(within)           -0.10818  se=0.01747  t=   -6.19  p=5.98e-10    ***
+     thrust_to_weight           -0.01114  se=0.00305  t=   -3.65  p=0.000262    ***
+     inertia_scale              -0.00593  se=0.00915  t=   -0.65  p=0.517          
+     abs_com_y                  +1.73602  se=0.23262  t=   +7.46  p=8.46e-14    ***
+     AF[mrs_f450]               -0.11304  se=0.00541  t=  -20.88  p=0           ***
+     AF[mrs_m690]               -0.22179  se=0.02207  t=  -10.05  p=0           ***
+     AF[mrs_t650]               -0.22884  se=0.01720  t=  -13.30  p=0           ***
+     AF[px4_x500]               -0.15094  se=0.00807  t=  -18.71  p=0           ***
+     crosswind                  +0.74313  se=0.00487  t= +152.59  p=0           ***
+     crosswind x |com_y|        -3.80183  se=0.40875  t=   -9.30  p=0           ***
+     crosswind x wind x |com_y| +0.45513  se=0.08676  t=   +5.25  p=1.56e-07    ***
+   JOINT F-TEST crosswind x com_y block: F(3,81880)=24199.85  p=0
+
+==============================================================================
+Reading guide: a coefficient b on log(SOB2) multiplies path-deviation error by
+e^b. Direction terms are deviations FROM tailwind(0).
+==============================================================================

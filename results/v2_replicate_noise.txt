@@ -1,0 +1,15 @@
+configs with both repeats valid: n = 8188
+  seed identical in all pairs: True; params identical (wind, turb, payload): True
+  mean d = +0.00115 (SE 0.00203); sd(d) = 0.18411; fraction d == 0 exactly: 0.000
+  same-seed noise variance Var(d)/2 = 0.016948  (noise sd 0.1302 log units = 13.9% per flight)
+  total Var(log SPE) of the v2 analysis set (n=81894) = 1.20250 -> noise share 1.409%
+  residual variance of the primary model (six factors + AF FE; R2 0.7758) = 0.26965 -> noise share 6.29% of residual variance
+  (explained by model: 77.6% of total; residual 22.4% of total; noise is 1.41% of total)
+  noise variance Var(d)/2 and mean |d| by turbulence tercile (cut points 1.00, 1.99):
+      low   n= 2730  Var(d)/2=0.026999  mean|d|=0.10273
+      mid   n= 2729  Var(d)/2=0.009149  mean|d|=0.04884
+      high  n= 2729  Var(d)/2=0.014704  mean|d|=0.04489
+  noise variance Var(d)/2 and mean |d| by mean wind tercile (cut points 2.00, 4.00):
+      low   n= 2730  Var(d)/2=0.012770  mean|d|=0.05218
+      mid   n= 2729  Var(d)/2=0.011876  mean|d|=0.05602
+      high  n= 2729  Var(d)/2=0.026203  mean|d|=0.08827

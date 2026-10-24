@@ -1,0 +1,81 @@
+{
+  "rule": "unique(run_id) & valid(not failed_attempt) & not-cooked(not 2x-takeoff) & one-per-config(dominant repeat; Saltelli exempt)",
+  "segments": {
+    "cruise": {
+      "v2": {
+        "combined": 90104,
+        "analysis_N": 81894,
+        "excluded": {
+          "nondominant_repeat": 8188,
+          "failed_attempt": 22
+        },
+        "dedup_config": true,
+        "analysis_sha256": "90471cf5920b897b6151d91daf7cd4fb344d054e4852f70bf922a8e06373c6d6",
+        "excluded_sha256": "be02437ba814cc650bd14e3814a29973f32dc136d4c6ce4ba74eb6e0c7a5050a"
+      },
+      "v3a": {
+        "combined": 18391,
+        "analysis_N": 18225,
+        "excluded": {
+          "failed_attempt": 166
+        },
+        "dedup_config": true,
+        "analysis_sha256": "ddf0eedb097bdf745feaa0cd9a95125526b92c183cc6c8656262332419a6a901",
+        "excluded_sha256": "570f7534d70e411ce19a77d11cb4ea777f9652835a51d06523e997a4b0623a80"
+      },
+      "v3b": {
+        "combined": 20005,
+        "analysis_N": 19942,
+        "excluded": {
+          "failed_attempt": 50,
+          "outside_experiment_design": 13
+        },
+        "dedup_config": true,
+        "analysis_sha256": "8202ccad84aa2e5ff1c3d647724f15b2746c874b0205ee65d4e504f733c38626",
+        "excluded_sha256": "690c338292134ee311f1bc72af16dd81ea62f67a779120db4b5fd00bd2a12933"
+      },
+      "v3c": {
+        "combined": 19974,
+        "analysis_N": 19941,
+        "excluded": {
+          "failed_attempt": 33
+        },
+        "dedup_config": true,
+        "analysis_sha256": "fcf0f915423f1d4ac459ed3f219e1c9a136d1838f009e8fa7670b8a2740f73bd",
+        "excluded_sha256": "20234bfc2523f42d08dd5afa270da03fd6fb8afabb888b1ab8f8b18c94391975"
+      },
+      "v3d": {
+        "combined": 19982,
+        "analysis_N": 19890,
+        "excluded": {
+          "failed_attempt": 92
+        },
+        "dedup_config": true,
+        "analysis_sha256": "e69107a7517a37d69f85f5631974ec4f792794154c37662f14b8a9b885751e9e",
+        "excluded_sha256": "f2fd06ba7388f68dd933fea6530e65e4dd1e43bfc7941b9c96651076a0400e0c"
+      },
+      "v4": {
+        "combined": 80847,
+        "analysis_N": 80446,
+        "excluded": {
+          "failed_attempt": 401
+        },
+        "dedup_config": true,
+        "analysis_sha256": "db060f0ad6cfc882fc8f508d57b6c04bc5e0e77ba2f5633de5bf27f7964158fc",
+        "excluded_sha256": "bf8758d83e8765e805120fbf943b67693851545950396c7d9ca8485eb57404c8"
+      },
+      "saltelli": {
+        "combined": 70958,
+        "analysis_N": 69538,
+        "excluded": {
+          "failed_attempt": 386,
+          "no_primary_metric": 1034
+        },
+        "dedup_config": false,
+        "analysis_sha256": "f287a3c16488ab8e9133d38f305b45d4f694f5c440a308fcde762eefd53ecaff",
+        "excluded_sha256": "73c631160fb58af757fe2d6552b3003f5319e01836bfb1248e45bcb38be28784"
+      },
+      "_TOTAL_analysis_N": 309876
+    }
+  }
+}

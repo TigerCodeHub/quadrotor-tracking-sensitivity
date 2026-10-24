@@ -1,0 +1,157 @@
+==============================================================================
+V3-B PAIRED ANALYSIS -- v3b segment
+==============================================================================
+v3 eligible rows: 19951   v2 control pool: 90082
+paired: 19951   v3 rows without an eligible v2 control: 0
+by block: {'a1': 3, 'a2': 6, 'b1': 9975, 'b2': 9967}
+
+------------------------------------------------------------------------------
+B1: COURSE HEADINGS (n=9975) -- is wind direction course-relative or absolute?
+------------------------------------------------------------------------------
+relative-class counts: {'cross': 2146, 'head': 1035, 'head-cross': 2772, 'tail': 1097, 'tail-cross': 2925}
+
+1a. covariates + RELATIVE wind classes (base=tail):
+   [rank 11/11, cond(X)=30.4]
+   intercept                -2.0574  (HC3 se 0.0361, t -57.05) ***
+   mean_wind                +0.1703  (HC3 se 0.0024, t +71.29) ***
+   turb_rms                 +1.0491  (HC3 se 0.0044, t +240.75) ***
+   log_mass                 -0.2452  (HC3 se 0.0080, t -30.60) ***
+   thrust_to_weight         -0.0248  (HC3 se 0.0084, t  -2.95) **
+   inertia_scale            +0.0208  (HC3 se 0.0252, t  +0.82)
+   abs_com_y                -1.1424  (HC3 se 0.4697, t  -2.43) *
+   [cross]                  +0.9546  (HC3 se 0.0148, t +64.59) ***
+   [head]                   +0.4703  (HC3 se 0.0183, t +25.75) ***
+   [head-cross]             +0.7610  (HC3 se 0.0139, t +54.59) ***
+   [tail-cross]             +0.3389  (HC3 se 0.0145, t +23.43) ***
+   n=9975  R2=0.9037  resid sd=0.3627
+
+1b. covariates + ABSOLUTE wind classes (base=abs0):
+   [rank 10/10, cond(X)=29.6]
+   intercept                -1.3905  (HC3 se 0.0444, t -31.32) ***
+   mean_wind                +0.1723  (HC3 se 0.0030, t +57.38) ***
+   turb_rms                 +1.0523  (HC3 se 0.0053, t +199.17) ***
+   log_mass                 -0.2456  (HC3 se 0.0104, t -23.60) ***
+   thrust_to_weight         -0.0347  (HC3 se 0.0109, t  -3.18) **
+   inertia_scale            +0.0204  (HC3 se 0.0330, t  +0.62)
+   abs_com_y                -0.4571  (HC3 se 0.5908, t  -0.77)
+   [abs180]                 -0.0989  (HC3 se 0.0132, t  -7.49) ***
+   [abs270]                 -0.1442  (HC3 se 0.0129, t -11.19) ***
+   [abs90]                  -0.1530  (HC3 se 0.0130, t -11.76) ***
+   n=9975  R2=0.8374  resid sd=0.4714
+
+1c. covariates + BOTH (do absolute classes add anything over relative?):
+   [rank 14/14, cond(X)=32.5]
+   intercept                -2.0409  (HC3 se 0.0369, t -55.37) ***
+   mean_wind                +0.1703  (HC3 se 0.0024, t +71.30) ***
+   turb_rms                 +1.0491  (HC3 se 0.0044, t +240.97) ***
+   log_mass                 -0.2451  (HC3 se 0.0080, t -30.58) ***
+   thrust_to_weight         -0.0250  (HC3 se 0.0084, t  -2.97) **
+   inertia_scale            +0.0207  (HC3 se 0.0253, t  +0.82)
+   abs_com_y                -1.1430  (HC3 se 0.4695, t  -2.43) *
+   [cross]                  +0.9505  (HC3 se 0.0151, t +62.92) ***
+   [head]                   +0.4616  (HC3 se 0.0187, t +24.68) ***
+   [head-cross]             +0.7567  (HC3 se 0.0141, t +53.61) ***
+   [tail-cross]             +0.3346  (HC3 se 0.0146, t +22.87) ***
+   [abs180]                 -0.0252  (HC3 se 0.0104, t  -2.43) *
+   [abs270]                 -0.0097  (HC3 se 0.0101, t  -0.96)
+   [abs90]                  -0.0126  (HC3 se 0.0104, t  -1.22)
+   n=9975  R2=0.9038  resid sd=0.3626
+
+   R2: relative=0.9037  absolute=0.8374  both=0.9038
+   -> crosswind is COURSE-RELATIVE if R2(rel) ~= R2(both) >> R2(abs)
+
+1d. OMNIBUS NESTED-MODEL COMPARISON (audit pass 3 #7). Full-rank parameterisation via
+    rank-aware HC3 fit: aliased columns are dropped (base columns kept first) and named.
+    design ranks: relative=4 dummies, absolute=3, heading=6 (levels: ['h045', 'h090', 'h135', 'h180', 'h225', 'h270', 'h315'])
+  Which wind description is needed? (covariates always in the base)
+   [cov] -> [cov + RELATIVE]          R2 0.8347 -> 0.9037  dR2=+0.0691 | HC3 Wald chi2=6690.29 df=4 p=0 (F=1672.57) | classical F=1787.27 | rank 11/11 cond=30.4
+   [cov] -> [cov + ABSOLUTE]          R2 0.8347 -> 0.8374  dR2=+0.0027 | HC3 Wald chi2=181.45 df=3 p=4.29e-39 (F=60.48) | classical F=55.39 | rank 10/10 cond=29.6
+   [cov+REL] -> [+ ABSOLUTE]          R2 0.9037 -> 0.9038  dR2=+0.0001 | HC3 Wald chi2=6.03 df=3 p=0.11 (F=2.01) | classical F=1.95 | rank 14/14 cond=32.5
+   [cov+ABS] -> [+ RELATIVE]          R2 0.8374 -> 0.9038  dR2=+0.0664 | HC3 Wald chi2=6505.49 df=4 p=0 (F=1626.37) | classical F=1719.05 | rank 14/14 cond=32.5
+  Does HEADING add anything after conditioning on course-relative wind?
+   [cov+REL] -> [+ HEADING]           R2 0.9037 -> 0.9039  dR2=+0.0001 | HC3 Wald chi2=10.90 df=5 p=0.0534 (F=2.18) | classical F=2.13 | rank 16/17 cond=32.4 ALIASED=['hdg[h270]']
+   [cov+REL+ABS] -> [+ HEADING]       R2 0.9038 -> 0.9039  dR2=+0.0001 | HC3 Wald chi2=11.40 df=5 p=0.044 (F=2.28) | classical F=2.22 | rank 19/20 cond=34.5 ALIASED=['hdg[h270]']
+  Full fit of [cov + REL + HEADING] (rank diagnostics + aliased columns):
+   [rank 16/17, cond(X)=32.4; ALIASED dropped: ['[h270]']]
+   intercept                -2.0704  (HC3 se 0.0372, t -55.70) ***
+   mean_wind                +0.1703  (HC3 se 0.0024, t +70.70) ***
+   turb_rms                 +1.0491  (HC3 se 0.0044, t +240.79) ***
+   log_mass                 -0.2452  (HC3 se 0.0080, t -30.59) ***
+   thrust_to_weight         -0.0247  (HC3 se 0.0084, t  -2.93) **
+   inertia_scale            +0.0197  (HC3 se 0.0252, t  +0.78)
+   abs_com_y                -1.1391  (HC3 se 0.4698, t  -2.42) *
+   [cross]                  +0.9555  (HC3 se 0.0148, t +64.61) ***
+   [head]                   +0.4706  (HC3 se 0.0183, t +25.76) ***
+   [head-cross]             +0.7660  (HC3 se 0.0181, t +42.25) ***
+   [tail-cross]             +0.3437  (HC3 se 0.0186, t +18.46) ***
+   [h090]                   +0.0094  (HC3 se 0.0149, t  +0.63)
+   [h135]                   +0.0208  (HC3 se 0.0129, t  +1.62)
+   [h180]                   +0.0296  (HC3 se 0.0143, t  +2.08) *
+   [h225]                   +0.0190  (HC3 se 0.0125, t  +1.52)
+   [h315]                   -0.0054  (HC3 se 0.0130, t  -0.41)
+   n=9975  R2=0.9039  resid sd=0.3626
+
+1e. paired deltas by relative-class transition (v2 control -> v3):
+   control->v3                   n    mean d        se
+   cross->cross                693   +0.0067    0.0054
+   cross->head                 683   -0.5185    0.0159
+   cross->head-cross          1431   -0.1903    0.0066
+   cross->tail                 716   -0.9683    0.0175
+   cross->tail-cross          1470   -0.5925    0.0104
+   head->cross                 715   +0.4678    0.0169
+   head->head-cross            666   +0.3343    0.0117
+   head->tail                  381   -0.4740    0.0322
+   head->tail-cross            717   +0.0220    0.0232
+   tail->cross                 738   +0.9306    0.0197
+   tail->head                  352   +0.4700    0.0321
+   tail->head-cross            675   +0.7750    0.0176
+   tail->tail-cross            738   +0.2753    0.0132
+
+------------------------------------------------------------------------------
+B2: TURNS + CLIMBS (n=9967) -- do maneuvers wake inertia / thrust-to-weight?
+------------------------------------------------------------------------------
+
+2.turns paired delta ~ design vars (n=5988, plans={'turn_l100': 1998, 'turn_l250': 1996, 'turn_l400': 1994})
+   mean delta = +0.0442 (maneuver-added log-error vs straight control)
+   [rank 9/9, cond(X)=29.5]
+   intercept                +0.1494  (HC3 se 0.0340, t  +4.39) ***
+   mean_wind                -0.0080  (HC3 se 0.0020, t  -3.89) ***
+   turb_rms                 -0.0909  (HC3 se 0.0045, t -20.39) ***
+   log_mass                 -0.0188  (HC3 se 0.0076, t  -2.46) *
+   thrust_to_weight         -0.0001  (HC3 se 0.0083, t  -0.02)
+   inertia_scale            +0.0453  (HC3 se 0.0247, t  +1.84)
+   abs_com_y                -0.2152  (HC3 se 0.4439, t  -0.48)
+   [turn_l250]              +0.0590  (HC3 se 0.0073, t  +8.12) ***
+   [turn_l400]              +0.0760  (HC3 se 0.0088, t  +8.66) ***
+   n=5988  R2=0.1001  resid sd=0.2690
+
+2.climbs paired delta ~ design vars (n=3979, plans={'climb_s1': 1990, 'climb_s2': 1989})
+   mean delta = -0.0075 (maneuver-added log-error vs straight control)
+   [rank 8/8, cond(X)=28.9]
+   intercept                +0.0958  (HC3 se 0.0273, t  +3.50) ***
+   mean_wind                -0.0018  (HC3 se 0.0018, t  -0.97)
+   turb_rms                 -0.0229  (HC3 se 0.0042, t  -5.47) ***
+   log_mass                 -0.0076  (HC3 se 0.0061, t  -1.24)
+   thrust_to_weight         -0.0209  (HC3 se 0.0067, t  -3.11) **
+   inertia_scale            -0.0244  (HC3 se 0.0208, t  -1.17)
+   abs_com_y                +0.8302  (HC3 se 0.3391, t  +2.45) *
+   [climb_s2]               +0.0189  (HC3 se 0.0056, t  +3.39) ***
+   n=3979  R2=0.0228  resid sd=0.1763
+
+2c. LEVEL fit on v3-b2 alone (comparable to the v2 main-effects table):
+   [rank 14/14, cond(X)=31.7]
+   intercept                -1.9008  (HC3 se 0.0340, t -55.88) ***
+   mean_wind                +0.1802  (HC3 se 0.0023, t +78.05) ***
+   turb_rms                 +1.0037  (HC3 se 0.0041, t +243.99) ***
+   log_mass                 -0.2743  (HC3 se 0.0078, t -35.38) ***
+   thrust_to_weight         -0.0141  (HC3 se 0.0081, t  -1.75)
+   inertia_scale            +0.0202  (HC3 se 0.0241, t  +0.84)
+   abs_com_y                +0.1950  (HC3 se 0.4491, t  +0.43)
+   [climb_s1]               -0.0460  (HC3 se 0.0119, t  -3.86) ***
+   [climb_s2]               -0.0198  (HC3 se 0.0115, t  -1.72)
+   [turn_l250]              +0.0297  (HC3 se 0.0108, t  +2.75) **
+   [turn_l400]              +0.0629  (HC3 se 0.0107, t  +5.87) ***
+   [w180]                   +0.3719  (HC3 se 0.0108, t +34.43) ***
+   [w270]                   +0.7684  (HC3 se 0.0102, t +75.63) ***
+   [w90]                    +0.7837  (HC3 se 0.0099, t +79.45) ***
+   n=9967  R2=0.9056  resid sd=0.3488

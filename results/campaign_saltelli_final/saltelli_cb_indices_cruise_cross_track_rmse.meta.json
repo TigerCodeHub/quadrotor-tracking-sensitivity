@@ -1,0 +1,9 @@
+{
+  "metric": "cross_track_rmse",
+  "segment": "cruise",
+  "N_complete_blocks": 2856,
+  "N_total_blocks": 4096,
+  "input_csv": "results/campaign_saltelli_final/analysis_cruise.csv",
+  "input_sha256": "9e30683074335c659cfe017d6ee0489351e07da7577795bc6c3c3d9b9189f819",
+  "generated_at": "2026-10-24T23:07:16.601394+00:00"
+}

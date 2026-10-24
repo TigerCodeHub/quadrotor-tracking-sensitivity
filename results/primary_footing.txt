@@ -1,0 +1,214 @@
+====================================================================================================
+(a) v2 WIND DIRECTION on the primary footing  (analysis_cruise, HC3 rank-aware, AF FE)
+====================================================================================================
+   direction counts: {'tailwind(0)': 20468, 'cross-left(90)': 20482, 'headwind(180)': 20465, 'cross-right(270)': 20479}
+   M1 primary six factors + AF FE: R2 0.7758 (n=81894)
+   M2 + direction level shifts (base tailwind): R2 0.8891
+   M3 + direction-specific wind and turbulence slopes: R2 0.9124
+   HC3 Wald M1->M2 (level shifts): chi2=82068.2 df=3 p=0
+   HC3 Wald M2->M3 (slopes): chi2=19929.0 df=6 p=0
+   model-based error ratios vs tailwind = exp(level-shift coefficient in M2), HC3 95% CI:
+      cross-left(90)     coef +0.8556 (se 0.0036)  ratio 2.353  CI [2.336, 2.369]
+      headwind(180)      coef +0.2776 (se 0.0040)  ratio 1.320  CI [1.310, 1.330]
+      cross-right(270)   coef +0.8450 (se 0.0037)  ratio 2.328  CI [2.311, 2.345]
+   unadjusted geometric-mean ratios vs tailwind: {'cross-left(90)': 2.351, 'headwind(180)': 1.32, 'cross-right(270)': 2.328} | geometric means: {'tailwind(0)': 0.8762, 'cross-left(90)': 2.0595, 'headwind(180)': 1.1567, 'cross-right(270)': 2.0398}
+   crosswind (avg of 90/270) / tailwind unadjusted: 2.339
+   direction-specific slopes (M3; slope = base + interaction; HC3 se via covariance):
+      wind tailwind: +0.0524 (se 0.0014)
+      wind cross-left(90): +0.1758 (se 0.0014)
+      wind headwind(180): +0.2552 (se 0.0016)
+      wind cross-right(270): +0.1831 (se 0.0015)
+      turb tailwind: +0.8750 (se 0.0032)
+      turb cross-left(90): +1.1596 (se 0.0028)
+      turb headwind(180): +0.9944 (se 0.0031)
+      turb cross-right(270): +1.1878 (se 0.0030)
+
+====================================================================================================
+(b) LEAVE-ONE-AIRFRAME-OUT on the primary footing (analysis_cruise; no airframe FE by design)
+====================================================================================================
+
+   WITHOUT direction terms  (features: six primary factors, log wheelbase, log disk loading)
+   held out        n   raw R2  raw RMSE    bias  in-sample R2  offset(10% split) R2
+   mrs_f330    16380    0.755    0.5752  -0.015         0.765                 0.753
+   mrs_f450    16382    0.765    0.5400  +0.094         0.774                 0.771
+   mrs_m690    16368    0.770    0.4870  +0.060         0.784                 0.774
+   mrs_t650    16383    0.775    0.4875  -0.066         0.786                 0.779
+   px4_x500    16381    0.776    0.5295  +0.003         0.778                 0.777
+   MEAN                 0.768                           0.777                 0.771   raw range [0.755, 0.776]
+
+   WITH direction terms  (features: six primary factors, log wheelbase, log disk loading)
+   held out        n   raw R2  raw RMSE    bias  in-sample R2  offset(10% split) R2
+   mrs_f330    16380    0.911    0.3458  -0.015         0.930                 0.911
+   mrs_f450    16382    0.913    0.3284  +0.094         0.923                 0.920
+   mrs_m690    16368    0.885    0.3446  +0.060         0.907                 0.889
+   mrs_t650    16383    0.893    0.3362  -0.066         0.910                 0.897
+   px4_x500    16381    0.915    0.3273  +0.003         0.916                 0.915
+   MEAN                 0.903                           0.917                 0.906   raw range [0.885, 0.915]
+
+====================================================================================================
+(c) v3-B on the primary footing (campaign_v3 analysis_cruise; HC3 rank-aware; six primary covariates + AF FE)
+====================================================================================================
+   b1 heading block n=9975; relative-class counts {'tail-cross': 2925, 'tail': 1097, 'head-cross': 2772, 'head': 1035, 'cross': 2146}
+   R2: covariates+AF 0.8398 | + relative 0.9091 | + absolute 0.8425 | + both 0.9092 | +rel+heading 0.9092
+   cov -> + RELATIVE                  dR2=+0.0694  HC3 Wald chi2=7189.43 df=4 p=0
+   cov -> + ABSOLUTE                  dR2=+0.0027  HC3 Wald chi2=186.07 df=3 p=4.31e-40
+   +REL -> + ABSOLUTE                 dR2=+0.0001  HC3 Wald chi2=5.99 df=3 p=0.112
+   +ABS -> + RELATIVE                 dR2=+0.0667  HC3 Wald chi2=6995.74 df=4 p=0
+   +REL -> + HEADING                  dR2=+0.0001  HC3 Wald chi2=11.55 df=5 p=0.0415
+   +REL+ABS -> + HEADING              dR2=+0.0001  HC3 Wald chi2=12.07 df=5 p=0.0339
+   relative-class coefficients (model + RELATIVE; base tail):
+   REL n=9975 R2=0.9091 rank 15/15
+      [cross]                  +0.9569  se 0.0144  t   +66.62  p 0
+      [head]                   +0.4763  se 0.0180  t   +26.52  p 0
+      [head-cross]             +0.7647  se 0.0137  t   +55.99  p 0
+      [tail-cross]             +0.3403  se 0.0142  t   +24.01  p 0
+   covariate coefficients in that model:
+   REL covariates n=9975 R2=0.9091 rank 15/15
+      turb                     +1.0473  se 0.0044  t  +236.40  p 0
+      wind                     +0.1703  se 0.0023  t   +72.88  p 0
+      lpay                     +0.1409  se 0.0525  t    +2.68  p 0.0073
+      tw                       -0.0251  se 0.0082  t    -3.07  p 0.0021
+      inert                    +0.0207  se 0.0245  t    +0.84  p 0.4
+      comf                     -0.3565  se 0.2479  t    -1.44  p 0.15
+   paired deltas by relative-class transition (v2 control -> v3):   n   mean   SE
+      cross->cross         693  +0.0067  0.0054
+      cross->head          683  -0.5185  0.0159
+      cross->head-cross   1431  -0.1903  0.0066
+      cross->tail          716  -0.9683  0.0175
+      cross->tail-cross   1470  -0.5925  0.0104
+      head->cross         715  +0.4678  0.0169
+      head->head-cross    666  +0.3343  0.0117
+      head->tail          381  -0.4740  0.0322
+      head->tail-cross    717  +0.0220  0.0232
+      tail->cross         738  +0.9306  0.0197
+      tail->head          352  +0.4700  0.0321
+      tail->head-cross    675  +0.7750  0.0176
+      tail->tail-cross    738  +0.2753  0.0132
+
+   b2 maneuvers n=9967 (paired deltas, HC3)
+   mean paired change by plan (intercept-only HC3 SE):
+      climb_s1    n= 1990 mean -0.0173 se 0.0039 t -4.5 p 7.9e-06
+      climb_s2    n= 1989 mean +0.0022 se 0.0041 t +0.5 p 0.59
+      turn_l100   n= 1998 mean +0.0116 se 0.0044 t +2.6 p 0.0082
+      turn_l250   n= 1996 mean +0.0490 se 0.0060 t +8.2 p 4.4e-16
+      turn_l400   n= 1994 mean +0.0720 se 0.0080 t +9.0 p 0
+   turns: pooled mean +0.0442 (HC3 se 0.0037, n=5988); paired-delta regression (covariates + plan + AF FE):
+   turns n=5988 R2=0.1024 rank 13/13
+      turb                     -0.0919  se 0.0046  t   -19.79  p 0
+      wind                     -0.0079  se 0.0021  t    -3.85  p 0.00012
+      lpay                     -0.1045  se 0.0480  t    -2.18  p 0.03
+      tw                       -0.0002  se 0.0083  t    -0.02  p 0.98
+      inert                    +0.0453  se 0.0247  t    +1.83  p 0.067
+      comf                     -0.1590  se 0.2395  t    -0.66  p 0.51
+      [turn_l250]              +0.0592  se 0.0073  t    +8.15  p 4.4e-16
+      [turn_l400]              +0.0762  se 0.0088  t    +8.70  p 0
+   climbs: pooled mean -0.0075 (HC3 se 0.0028, n=3979); paired-delta regression (covariates + plan + AF FE):
+   climbs n=3979 R2=0.0237 rank 12/12
+      turb                     -0.0235  se 0.0045  t    -5.21  p 1.9e-07
+      wind                     -0.0018  se 0.0018  t    -1.01  p 0.31
+      lpay                     +0.0239  se 0.0431  t    +0.55  p 0.58
+      tw                       -0.0210  se 0.0067  t    -3.11  p 0.0019
+      inert                    -0.0247  se 0.0208  t    -1.18  p 0.24
+      comf                     +0.4409  se 0.1870  t    +2.36  p 0.018
+      [climb_s2]               +0.0189  se 0.0056  t    +3.38  p 0.00071
+   b2 LEVEL fit with plan dummies (base turn_l100):
+   b2 level n=9967 R2=0.8282 rank 15/15
+      turb                     +0.9999  se 0.0053  t  +189.22  p 0
+      wind                     +0.1782  se 0.0030  t   +59.12  p 0
+      lpay                     +0.0176  se 0.0661  t    +0.27  p 0.79
+      tw                       -0.0173  se 0.0109  t    -1.59  p 0.11
+      inert                    +0.0444  se 0.0326  t    +1.36  p 0.17
+      comf                     +0.3891  se 0.3280  t    +1.19  p 0.24
+      [climb_s1]               -0.0452  se 0.0166  t    -2.73  p 0.0064
+      [climb_s2]               -0.0101  se 0.0162  t    -0.62  p 0.53
+      [turn_l250]              +0.0292  se 0.0147  t    +1.99  p 0.047
+      [turn_l400]              +0.0804  se 0.0134  t    +5.99  p 2e-09
+
+====================================================================================================
+(d) v3-C curvature on the primary footing (campaign_v3_full block c1; HC3; delta vs the config's v2 flight)
+====================================================================================================
+   n=19941 arcs; start-to-end chord 636.6-1000.0 m; corr(kappa, chord) = -0.9750
+   delta ~ kappa only:
+    n=19941 R2=0.0436 rank 2/2
+      kappa                  +121.3113  se 4.0126  t   +30.23  p 0
+   delta ~ kappa + six primary covariates (no AF FE):
+    n=19941 R2=0.0659 rank 8/8
+      turb                     -0.0752  se 0.0038  t   -20.00  p 0
+      wind                     +0.0053  se 0.0020  t    +2.66  p 0.0078
+      lpay                     +0.0057  se 0.0436  t    +0.13  p 0.9
+      tw                       -0.0045  se 0.0077  t    -0.59  p 0.56
+      inert                    -0.0255  se 0.0231  t    -1.10  p 0.27
+      comf                     -0.0803  se 0.2292  t    -0.35  p 0.73
+      kappa                  +121.1086  se 3.9484  t   +30.67  p 0
+   delta ~ kappa + six primary covariates + AF FE (HEADLINE):
+    n=19941 R2=0.0669 rank 12/12
+      turb                     -0.0771  se 0.0040  t   -19.41  p 0
+      wind                     +0.0053  se 0.0020  t    +2.65  p 0.008
+      lpay                     -0.0023  se 0.0455  t    -0.05  p 0.96
+      tw                       -0.0044  se 0.0077  t    -0.57  p 0.57
+      inert                    -0.0254  se 0.0230  t    -1.10  p 0.27
+      comf                     -0.0802  se 0.2292  t    -0.35  p 0.73
+      kappa                  +121.1038  se 3.9456  t   +30.69  p 0
+   functional form: + kappa^2:
+    n=19941 R2=0.0675 rank 13/13
+      kappa                   +64.6596  se 14.0190  t    +4.61  p 4e-06
+      kappa_sq              +19554.1587  se 5235.8193  t    +3.73  p 0.00019
+   functional form: + start-to-end chord (equivalent):
+    n=19941 R2=0.0677 rank 13/13
+      kappa                   +51.0531  se 15.3312  t    +3.33  p 0.00087
+      chord_m                  -0.0005  se 0.0001  t    -4.23  p 2.3e-05
+   pairs bootstrap (1000) of headline kappa slope: se 3.89  95% CI [113.11, 128.33]
+   per-airframe kappa slope (delta ~ kappa + six covariates within airframe, HC3):
+      mrs_f330   n= 3995 kappa   +71.62 (se 9.35, t +7.7)
+      mrs_f450   n= 3999 kappa  +164.32 (se 9.44, t +17.4)
+      mrs_m690   n= 3997 kappa  +120.17 (se 8.12, t +14.8)
+      mrs_t650   n= 3999 kappa  +124.16 (se 8.76, t +14.2)
+      px4_x500   n= 3951 kappa  +126.62 (se 8.24, t +15.4)
+
+====================================================================================================
+(e) v3-D on the primary footing (paired Dryden - white)
+====================================================================================================
+   n=19890 mean paired change -0.8485  HC3 se 0.0057  (plain SE 0.0057); ratio exp = 0.428; median -0.9488
+   paired delta ~ six primary covariates + AF FE (HC3):
+    n=19890 R2=0.0821 rank 11/11
+      turb                     -0.1671  se 0.0062  t   -26.96  p 0
+      wind                     +0.0745  se 0.0034  t   +21.88  p 0
+      lpay                     +0.1363  se 0.0736  t    +1.85  p 0.064
+      tw                       -0.0862  se 0.0131  t    -6.57  p 4.9e-11
+      inert                    -0.0590  se 0.0380  t    -1.55  p 0.12
+      comf                     +0.7460  se 0.3772  t    +1.98  p 0.048
+   v3-D level fit (Dryden) six covariates + AF FE:
+    n=19890 R2=0.5474 rank 11/11
+      turb                     +0.8933  se 0.0071  t  +125.49  p 0
+      wind                     +0.2553  se 0.0042  t   +60.94  p 0
+      lpay                     +0.0611  se 0.0848  t    +0.72  p 0.47
+      tw                       -0.0918  se 0.0150  t    -6.11  p 1e-09
+      inert                    -0.0348  se 0.0437  t    -0.80  p 0.43
+      comf                     +0.9830  se 0.4367  t    +2.25  p 0.024
+   v2 paired subset (white) level fit six covariates + AF FE:
+    n=19890 R2=0.7985 rank 11/11
+      turb                     +1.0604  se 0.0043  t  +244.06  p 0
+      wind                     +0.1807  se 0.0024  t   +74.29  p 0
+      lpay                     -0.0753  se 0.0527  t    -1.43  p 0.15
+      tw                       -0.0056  se 0.0089  t    -0.64  p 0.53
+      inert                    +0.0242  se 0.0268  t    +0.90  p 0.37
+      comf                     +0.2370  se 0.2678  t    +0.88  p 0.38
+
+====================================================================================================
+(f) log-log exponents on the canonical v2 analysis set (HC3; airframe dummies)
+====================================================================================================
+   turbulence sigma_v   n=76446: log-log + AF dummies only: p=1.2099 HC3 se 0.0031 95% CI [1.2037, 1.2160] | with other primary covariates: p=1.2098 (se 0.0028) CI [1.2042, 1.2153]
+   mean wind U          n=79164: log-log + AF dummies only: p=0.3144 HC3 se 0.0047 95% CI [0.3053, 0.3236] | with other primary covariates: p=0.3140 (se 0.0027) CI [0.3088, 0.3193]
+   mass (within airframe) n=81894: p=-0.1100 HC3 se 0.0503 CI [-0.2086, -0.0113]
+
+====================================================================================================
+(g) metric-robustness table on the primary footing (v2 analysis set; six factors + AF FE; HC3)
+====================================================================================================
+   metric                     n      R2  sign agree  signif agree
+   cross_track_rmse       81894   0.776         n/a           n/a
+   rms_error              81894   0.779         6/6           5/6
+   horizontal_rmse        81894   0.780         6/6           6/6
+   max_error              81894   0.737         6/6           6/6
+   cross_track_max        81894   0.736         6/6           6/6
+   altitude_rmse          81894   0.172         4/6           3/6
+

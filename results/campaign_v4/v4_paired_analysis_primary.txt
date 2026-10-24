@@ -1,0 +1,22 @@
+================================================================================
+PAIRED v4 c1 route contrast: 19801 matched pairs (Dryden route - Dryden straight)
+================================================================================
+
+route          n   mean dlog  exp(mean)  (within-config route effect)
+dlv_a       6616      1.1855      3.272
+dlv_b       6588      1.7007      5.478
+dlv_c       6597      1.6090      4.998
+
+model: delta ~ route + airframe FE  (baseline route=dlv_a, n=19801, R^2=0.055)
+  term                     b    HC3 se  clusterSE   t_HC3
+  intercept           1.2333    0.0201     0.1712    61.3
+  route[dlv_b]        0.5154    0.0172     0.0321    29.9
+  route[dlv_c]        0.4236    0.0171     0.0217    24.8
+  AF[mrs_f450]        0.0580    0.0241     0.1649     2.4
+  AF[mrs_m690]       -0.1657    0.0224     0.1453    -7.4
+  AF[mrs_t650]       -0.1056    0.0242     0.1422    -4.4
+  AF[px4_x500]       -0.0244    0.0227     0.1526    -1.1
+
+Interpretation: route[dlv_b]/[dlv_c] coefficients are the added log-SOB2 of
+flying the suburban/multi-stop archetype vs the urban baseline, for matched
+configs. Cluster SE (by airframe, 5 clusters) is a conservative dependence check.
