@@ -8,6 +8,8 @@ authors:
     orcid: "https://orcid.org/0009-0008-0549-590X"
     affiliation: "Thomas Jefferson High School for Science and Technology"
 license: MIT
+doi: 10.5281/zenodo.23750670
+repository-code: "https://github.com/TigerCodeHub/quadrotor-tracking-sensitivity"
 keywords:
   - quadrotor
   - path tracking
@@ -15,6 +17,15 @@ keywords:
   - software-in-the-loop
   - global sensitivity analysis
   - Dryden turbulence
+references:
+  - type: data
+    title: "Quadrotor Path-Tracking Sensitivity: Per-Flight Data from a Large-Scale PX4 Software-in-the-Loop Study"
+    authors:
+      - family-names: Deng
+        given-names: Tiger
+        orcid: "https://orcid.org/0009-0008-0549-590X"
+    doi: 10.5281/zenodo.23749893
+    year: 2026
 preferred-citation:
   type: article
   title: "Quadrotor Path-Tracking Sensitivity from Straight Paths to Synthetic Delivery Routes: A Large-Scale PX4 Software-in-the-Loop Study"

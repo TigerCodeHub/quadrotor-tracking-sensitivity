@@ -1,7 +1,8 @@
 # Quadrotor path-tracking sensitivity: PX4 SITL study
 
 [![CI](https://github.com/TigerCodeHub/quadrotor-tracking-sensitivity/actions/workflows/ci.yml/badge.svg)](https://github.com/TigerCodeHub/quadrotor-tracking-sensitivity/actions/workflows/ci.yml)
-[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23749893.svg)](https://doi.org/10.5281/zenodo.23749893)
+[![Code DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23750670.svg)](https://doi.org/10.5281/zenodo.23750670)
+[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23749893.svg)](https://doi.org/10.5281/zenodo.23749893)
 
 Code, models, and summary results for
 
@@ -14,7 +15,8 @@ direction, payload, thrust-to-weight, inertia, and center-of-mass offset, first 
 and then on synthetic delivery-route archetypes, with a Saltelli variance decomposition on top.
 Turbulence intensity and mean wind speed dominate; the vehicle parameters have small effects.
 
-The per-flight data tables are on Zenodo (DOI: [10.5281/zenodo.23749893](https://doi.org/10.5281/zenodo.23749893)); see [`DATA_MANIFEST.md`](DATA_MANIFEST.md).
+The per-flight data tables are on Zenodo (dataset DOI: [10.5281/zenodo.23749893](https://doi.org/10.5281/zenodo.23749893)); see [`DATA_MANIFEST.md`](DATA_MANIFEST.md).
+Releases of this repository are archived on Zenodo (code DOI: [10.5281/zenodo.23750670](https://doi.org/10.5281/zenodo.23750670), all versions).
 
 ## Repository layout
 | path | contents |
